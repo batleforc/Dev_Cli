@@ -1,0 +1,20 @@
+[package]
+name = "devfile"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+k8s-openapi = { version = "0.23", features = ["latest", "schemars"] }
+jsonschema = "0.21"
+serde = "1.0"
+serde_json = "1.0"
+serde_yaml = "0.9"
+tracing = "0.1"
+kube = { version = "0.95", features = ["derive", "jsonpatch"] }
+tokio = "1.40"
+crd = { path = "../crd" }
+json-patch = "2.0.0"
+helper = { path = "../helper" }
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

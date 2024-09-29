@@ -1,7 +1,20 @@
 {
+  // See https://go.microsoft.com/fwlink/?LinkId=827846
+  // for the documentation about the extensions.json format
   "recommendations": [
-    
-    "nrwl.angular-console",
-    "esbenp.prettier-vscode"
+    "rust-lang.rust-analyzer",
+    "github.copilot",
+    "mitchdenny.ecdc",
+    "aaron-bond.better-comments",
+    "bierner.markdown-mermaid",
+    "hristian-kohler.path-intellisense",
+    "helixquar.randomeverything",
+    "shardulm94.trailing-spaces",
+    "tamasfe.even-better-toml",
+    "edwinkofler.vscode-hyperupcall-pack-markdown",
+    "proxzima.sweetdracula",
+    "wdhongtw.gpg-indicator",
+    "vadimcn.vscode-lldb",
+    "wakatime.vscode-wakatime"
   ]
 }
