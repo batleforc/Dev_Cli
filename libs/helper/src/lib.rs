@@ -9,6 +9,18 @@ impl Helper {
         std::env::var("DEVWORKSPACE_NAME").ok()
     }
 
+    pub fn get_workspace_id_from_env() -> Option<String> {
+        std::env::var("DEVWORKSPACE_ID").ok()
+    }
+
+    pub fn get_workspace_name_from_env() -> Option<String> {
+        std::env::var("DEVWORKSPACE_NAME").ok()
+    }
+
+    pub fn get_podname_from_env() -> Option<String> {
+        std::env::var("HOSTNAME").ok()
+    }
+
     #[tracing::instrument(level = "trace")]
     pub async fn get_client() -> Option<Client> {
         match client::Client::try_default().await {
