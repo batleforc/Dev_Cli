@@ -1,0 +1,14 @@
+{
+  "name": "@dev-cli/source",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {},
+  "private": true,
+  "dependencies": {
+    "@monodon/rust": "2.0.0-beta.1"
+  },
+  "devDependencies": {
+    "@nx/workspace": "19.8.2",
+    "nx": "19.8.2"
+  }
+}
