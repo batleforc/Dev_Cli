@@ -1,0 +1,20 @@
+[package]
+name = "vscode"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+http = "1.1"
+http-body-util = "0.1"
+hyper-util = { version = "0.1", features = ["tokio"] }
+tokio = "1.40"
+tokio-util = "0.7"
+tracing = "0.1"
+helper = { path = "../helper" }
+kube = { version = "0.95", features = ["derive", "jsonpatch", "ws"] }
+k8s-openapi = { version = "0.23", features = ["latest", "schemars"] }
+hyper = { version = "1.4", features = ["client", "http1"] }
+serde = "1.0.210"
+url = "2.5.2"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
