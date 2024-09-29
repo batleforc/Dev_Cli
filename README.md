@@ -11,3 +11,8 @@ There is also a redhat release of che that is called [DevSpace](https://develope
 ## MonoRepo
 
 Based on the [Rust NX](https://github.com/cammisuli/monodon/tree/main/packages/rust) template.
+
+```bash
+nx generate @monodon/rust:library my-rust-lib # Create lib
+nx generate @monodon/rust:binary my-rust-app # Create app
+```

@@ -14,7 +14,6 @@
     "edwinkofler.vscode-hyperupcall-pack-markdown",
     "proxzima.sweetdracula",
     "wdhongtw.gpg-indicator",
-    "vadimcn.vscode-lldb",
-    "wakatime.vscode-wakatime"
+    "vadimcn.vscode-lldb"
   ]
 }
