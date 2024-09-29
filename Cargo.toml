@@ -1,7 +1,12 @@
 
 [workspace]
 resolver = '2'
-members = ['libs/crd', 'libs/devfile', 'libs/helper']
+members = [
+	'libs/crd',
+	'libs/devfile',
+	'libs/helper',
+	'libs/vscode',
+]
 
 [profile.release]
 lto = true
