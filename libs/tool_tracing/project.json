@@ -1,0 +1,37 @@
+{
+  "name": "tool_tracing",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/tool_tracing/src",
+  "targets": {
+    "build": {
+      "executor": "@monodon/rust:check",
+      "outputs": ["{options.target-dir}"],
+      "options": {
+        "target-dir": "dist/target/tool_tracing"
+      }
+    },
+    "test": {
+      "cache": true,
+      "executor": "@monodon/rust:test",
+      "outputs": ["{options.target-dir}"],
+      "options": {
+        "target-dir": "dist/target/tool_tracing"
+      },
+      "configurations": {
+        "production": {
+          "release": true
+        }
+      }
+    },
+    "lint": {
+      "cache": true,
+      "executor": "@monodon/rust:lint",
+      "outputs": ["{options.target-dir}"],
+      "options": {
+        "target-dir": "dist/target/tool_tracing"
+      }
+    }
+  },
+  "tags": []
+}

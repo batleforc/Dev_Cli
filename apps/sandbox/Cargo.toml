@@ -1,12 +1,16 @@
 [package]
-name = "helper"
+name = "sandbox"
 version = "0.1.0"
 edition = "2021"
 
+
 [dependencies]
-k8s-openapi = { workspace = true }
-kube = { workspace = true }
+helper = { path = "../../libs/helper" }
+tool_tracing = { path = "../../libs/tool_tracing" }
+devfile = { path = "../../libs/devfile" }
 tokio = { workspace = true }
 tracing = { workspace = true }
+k8s-openapi = { workspace = true }
+kube = { workspace = true }
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
