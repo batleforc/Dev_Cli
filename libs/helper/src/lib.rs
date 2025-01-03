@@ -1,7 +1,12 @@
 use k8s_openapi::{api::core::v1::Pod, NamespaceResourceScope};
-use kube::{api::AttachParams, client, Api, Client, Resource};
+use kube::{
+    api::{AttachParams, AttachedProcess},
+    client, Api, Client, Resource,
+};
 use std::collections::HashMap;
 use tokio::io::AsyncReadExt;
+
+pub mod error;
 
 #[derive(Clone, Debug)]
 pub struct Helper {}
@@ -56,37 +61,77 @@ impl Helper {
         client: Client,
         namespace: String,
         podname: String,
-        container: Option<String>,
-    ) -> Option<HashMap<String, String>> {
+        container: String,
+    ) -> Result<HashMap<String, String>, error::GetPodEnvvarsError> {
         let pods: Api<Pod> = Api::namespaced(client, &namespace);
-        let mut attach = AttachParams::interactive_tty();
-        if let Some(container) = container {
-            attach = attach.container(container);
-        }
-        let mut result = match pods.exec(&podname, vec!["env"], &attach).await {
+        let mut result = match Self::get_attach_process(
+            pods,
+            podname,
+            container,
+            vec!["env".to_string()],
+            AttachParams::interactive_tty(),
+        )
+        .await
+        {
             Ok(result) => result,
             Err(err) => {
                 tracing::error!("Could not exec into pod : {:?}", err);
-                return None;
+                return Err(error::GetPodEnvvarsError::AttachError(err));
             }
         };
-        let mut stdout = result.stdout().unwrap();
+        let mut stdout = match result.stdout() {
+            Some(stdout) => stdout,
+            None => {
+                tracing::error!("Could not get stdout from exec");
+                return Err(error::GetPodEnvvarsError::StdoutAttachError);
+            }
+        };
         let mut buff = String::new();
-        stdout.read_to_string(&mut buff).await.unwrap();
+        match stdout.read_to_string(&mut buff).await {
+            Ok(_) => {}
+            Err(err) => {
+                tracing::error!("Could not read stdout : {:?}", err);
+                return Err(error::GetPodEnvvarsError::IoError(err));
+            }
+        }
         tracing::trace!("Envvars : {:?}", buff);
         if buff.is_empty() || buff == "\n" {
-            return None;
+            tracing::error!("Empty return from exec");
+            return Err(error::GetPodEnvvarsError::EmptyReturn);
         }
         let envvars: HashMap<String, String> = buff
             .split("\n")
             .map(|line| {
                 let mut parts = line.split("=");
                 let key = parts.next().unwrap().to_string();
-                let value = parts.next().unwrap_or("").to_string();
+                let value = parts.next().unwrap_or("").to_string().replace("\r", "");
                 (key, value)
             })
             .collect();
 
-        Some(envvars)
+        Ok(envvars)
+    }
+
+    #[tracing::instrument(level = "trace", skip(pods))]
+    pub async fn get_attach_process(
+        pods: Api<Pod>,
+        podname: String,
+        container: String,
+        command: Vec<String>,
+        attach_params: AttachParams,
+    ) -> Result<AttachedProcess, error::GetAttachProcess> {
+        let mut attach = attach_params;
+        if command.is_empty() {
+            tracing::error!("Empty command");
+            return Err(error::GetAttachProcess::EmptyCommand);
+        }
+        attach = attach.container(container);
+        match pods.exec(&podname, command, &attach).await {
+            Ok(result) => Ok(result),
+            Err(err) => {
+                tracing::error!("Could not exec into pod : {:?}", err);
+                return Err(error::GetAttachProcess::AttachError(err));
+            }
+        }
     }
 }
