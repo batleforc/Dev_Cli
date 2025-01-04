@@ -7,6 +7,7 @@ use std::collections::HashMap;
 use tokio::io::AsyncReadExt;
 
 pub mod error;
+pub mod select_pod;
 
 #[derive(Clone, Debug)]
 pub struct Helper {}

@@ -76,8 +76,8 @@ async fn main() {
             println!("Namespace: {:?}", namespace);
             println!("Workspace name: {:?}", workspace_name);
         }
-        Some(Commands::Code { code: _ }) => {
-            println!("Code command");
+        Some(Commands::Code { code }) => {
+            code.as_ref().unwrap().run().await;
         }
         None => tracing::info!("No command provided"),
     };
