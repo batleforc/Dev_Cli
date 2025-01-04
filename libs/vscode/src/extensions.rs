@@ -23,8 +23,6 @@ impl Extensions {
             "ms-kubernetes-tools.vscode-kubernetes-tools".to_string(),
             "ms-vscode-remote.remote-ssh".to_string(),
             "ms-vscode.remote-server".to_string(),
-            "test.test".to_string(),
-            "bierner.emojisense".to_string(),
         ]
     }
 
