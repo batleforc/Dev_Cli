@@ -1,10 +1,9 @@
-use devfile::lifecycle::find_pod_by_ws_name::find_pod_by_ws_name;
-use helper::Helper;
 use tool_tracing::{
     init::init_tracing,
     level::VerboseLevel,
     tracing_kind::{Tracing, TracingKind},
 };
+use vscode::extensions;
 
 #[tokio::main]
 async fn main() {
@@ -17,29 +16,36 @@ async fn main() {
         }],
         "Dev-Cli-Sandbox".to_string(),
     );
-    let namespace = "dev-ws-max-k2l7cd".to_string();
-    let ws_name = "weebodevimage".to_string();
-    let kube_client = Helper::get_client().await.unwrap();
-    let pod_obj = find_pod_by_ws_name(
-        kube_client.clone(),
-        Some(ws_name.clone()),
-        Some(namespace.clone()),
-    )
-    .await
-    .unwrap();
+    //let namespace = "dev-ws-max-k2l7cd".to_string();
+    //let ws_name = "weebodevimage".to_string();
+    let extensions = extensions::Extensions::new();
+    let installed_extensions = extensions.get_installed_extensions();
+    println!("{:?}", installed_extensions);
 
-    let podname = pod_obj.metadata.name.clone().unwrap();
-    let env_vars = Helper::get_pod_envvars(kube_client, namespace, podname, "tools".to_string())
-        .await
-        .unwrap();
-    println!("{:?}", env_vars);
-    // let pod_env_var = Helper::get_pod_envvars(
-    //     kube_client,
-    //     pod_name.metadata.namespace.unwrap(),
-    //     pod_name.metadata.name.unwrap(),
-    //     Some("tool".to_string()),
-    // )
-    // .await
-    // .unwrap();
-    // println!("{:?}", pod_env_var);
+    let missing_extensions = extensions.check_missing_extensions();
+    println!("{:?}", missing_extensions);
+
+    match missing_extensions {
+        Ok(missing_extensions) => {
+            if missing_extensions.is_empty() {
+                println!("All mandatory extensions are installed");
+            } else {
+                println!("Missing extensions: {:?}", missing_extensions);
+                for extension in missing_extensions {
+                    println!("Installing extension: {}", extension);
+                    match extensions.install_extension(&extension) {
+                        Ok(_) => {
+                            println!("Extension {} installed", extension);
+                        }
+                        Err(err) => {
+                            println!("Error: {:?}", err);
+                        }
+                    };
+                }
+            }
+        }
+        Err(err) => {
+            println!("Error: {:?}", err);
+        }
+    }
 }

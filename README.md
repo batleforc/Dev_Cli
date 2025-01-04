@@ -8,6 +8,35 @@ Eclipse che is my main env that allow me to dev in my personal time (and i love 
 
 There is also a redhat release of che that is called [DevSpace](https://developers.redhat.com/products/openshift-dev-spaces/overview).
 
+### Commands
+
+Inside of this module there will be multiple categories of commands that will be available, like:
+
+- `dev_cli code` - Commands that are related to vscode manipulation (Open che workspace in vscode desktop)
+- `dev_cli workspace` - Commands that are related to workspace manipulation (Info/Get/List/Start/Stop/...)
+- `dev_cli shell` - Commands that are related to shell manipulation (ItShell/ExecShell/...)
+
+#### Code
+
+- `dev_cli code open` - Open the current workspace in vscode desktop
+- `dev_cli code check` - Check if the needed vscode extension are installed and install them if needed
+
+#### Workspace
+
+- `dev_cli workspace info` - Output workspace info, and if run directly in a workspace, output the current workspace info, either ask the user to choose a workspace (output could be json or yaml)
+- `dev_cli workspace get` - Get a workspace by name, by default the current if in one
+- `dev_cli workspace get_container` - Get a workspace's container by name, by default the current if in one
+- `dev_cli workspace list` - List all the workspaces
+- `dev_cli workspace start` - Start a workspace by name
+- `dev_cli workspace stop` - Stop a workspace by name
+- `dev_cli workspace restart` - Restart a workspace by name
+- `dev_cli workspace restart_from_local` - Restart from local devfile
+
+#### Shell
+
+- `dev_cli shell it` - Start an interactive shell in the current workspace
+- `dev_cli shell exec` - Execute a command in the current workspace
+
 ## MonoRepo
 
 Based on the [Rust NX](https://github.com/cammisuli/monodon/tree/main/packages/rust) template.
