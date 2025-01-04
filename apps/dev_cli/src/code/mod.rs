@@ -21,9 +21,27 @@ pub enum Code {
         #[arg(long, short, default_value = "/projects/")]
         path: String,
 
+        /// Workspace name
+        #[arg(long, short)]
+        workspace_name: String,
+
+        /// The namespace where your workspace is
+        #[arg(long, short)]
+        namespace: Option<String>,
+
+        /// Kubernetes context, should be imported in vscode first
         #[arg(long, short)]
         context: Option<String>,
     },
     /// Check if the needed extensions are installed
-    Check {},
+    Check {
+        /// If the extensions should be installed, by default it will only check
+        #[arg(long)]
+        install: bool,
+    },
+}
+
+impl Code {
+    /// Run the subcommand
+    pub async fn run(&self) {}
 }
