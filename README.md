@@ -15,13 +15,14 @@ Inside of this module there will be multiple categories of commands that will be
 - `dev_cli code` - Commands that are related to vscode manipulation (Open che workspace in vscode desktop)
 - `dev_cli workspace` - Commands that are related to workspace manipulation (Info/Get/List/Start/Stop/...)
 - `dev_cli shell` - Commands that are related to shell manipulation (ItShell/ExecShell/...)
+- `dev_cli completion` - Commands that are related to completion manipulation (Bash/Zsh/...)
 
-#### Code
+#### Code - Working
 
 - `dev_cli code open` - Open the current workspace in vscode desktop
 - `dev_cli code check` - Check if the needed vscode extension are installed and install them if needed
 
-#### Workspace
+#### Workspace - TODO
 
 - `dev_cli workspace info` - Output workspace info, and if run directly in a workspace, output the current workspace info, either ask the user to choose a workspace (output could be json or yaml)
 - `dev_cli workspace get` - Get a workspace by name, by default the current if in one
@@ -32,10 +33,14 @@ Inside of this module there will be multiple categories of commands that will be
 - `dev_cli workspace restart` - Restart a workspace by name
 - `dev_cli workspace restart_from_local` - Restart from local devfile
 
-#### Shell
+#### Shell - TODO
 
 - `dev_cli shell it` - Start an interactive shell in the current workspace
 - `dev_cli shell exec` - Execute a command in the current workspace
+
+#### Completion - TODO
+
+- `dev_cli completion -s $TERMINAL_KIND` - Output $TERMINAL_KIND completion script
 
 ## MonoRepo
 

@@ -1,4 +1,5 @@
-use clap::{Parser, Subcommand};
+use clap::{CommandFactory, Parser, Subcommand};
+use clap_complete::{generate, Shell};
 use level::VerboseSwapLevel;
 use tool_tracing::{init, level::VerboseLevel, tracing_kind::Tracing};
 
@@ -40,6 +41,11 @@ pub enum Commands {
         #[command(subcommand)]
         code: Option<code::Code>,
     },
+    /// Generate completion scripts for your shell
+    Completion {
+        #[arg(short, long)]
+        shell: Shell,
+    },
 }
 
 #[tokio::main]
@@ -78,6 +84,10 @@ async fn main() {
         }
         Some(Commands::Code { code }) => {
             code.as_ref().unwrap().run().await;
+        }
+        Some(Commands::Completion { shell }) => {
+            let mut cmd = Cli::command();
+            generate(*shell, &mut cmd, "dev_cli", &mut std::io::stdout());
         }
         None => tracing::info!("No command provided"),
     };
