@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use crate::error::GetInstalledExtensionsError;
+use crate::error::{GetInstalledExtensionsError, InstallExtensionError};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Extensions {}
@@ -23,6 +23,7 @@ impl Extensions {
             "ms-kubernetes-tools.vscode-kubernetes-tools".to_string(),
             "ms-vscode-remote.remote-ssh".to_string(),
             "ms-vscode.remote-server".to_string(),
+            "test.test".to_string(),
             "bierner.emojisense".to_string(),
         ]
     }
@@ -70,7 +71,7 @@ impl Extensions {
     }
 
     #[tracing::instrument(level = "trace")]
-    pub fn install_extension(&self, extension: &str) -> Result<(), GetInstalledExtensionsError> {
+    pub fn install_extension(&self, extension: &str) -> Result<(), InstallExtensionError> {
         let command = format!("code --install-extension {}", extension);
         tracing::trace!("Installing extension: {}", extension);
         let output = if cfg!(target_os = "windows") {
@@ -85,8 +86,14 @@ impl Extensions {
                 .output()
                 .expect("failed to execute process")
         };
-        let output = String::from_utf8_lossy(&output.stdout);
-        tracing::trace!("output: {:?}", output);
+        let out = String::from_utf8_lossy(&output.stdout);
+        let err = String::from_utf8_lossy(&output.stderr);
+        tracing::trace!("output: {:?} : {:?}", out, err);
+        if err != "" {
+            return Err(InstallExtensionError::FailedToInstallExtension(
+                err.to_string(),
+            ));
+        }
         Ok(())
     }
 }

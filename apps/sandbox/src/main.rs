@@ -10,7 +10,7 @@ async fn main() {
     init_tracing(
         vec![Tracing {
             kind: TracingKind::Console,
-            level: VerboseLevel::DEBUG,
+            level: VerboseLevel::TRACE,
             additional: Default::default(),
             name: "test2".to_string(),
         }],
