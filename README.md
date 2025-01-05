@@ -24,8 +24,7 @@ Inside of this module there will be multiple categories of commands that will be
 
 #### Workspace - TODO
 
-- `dev_cli workspace info` - Output workspace info, and if run directly in a workspace, output the current workspace info, either ask the user to choose a workspace (output could be json or yaml)
-- `dev_cli workspace get` - Get a workspace by name, by default the current if in one
+- `dev_cli workspace get` - Output workspace info, and if run directly in a workspace, output the current workspace info, either ask the user to choose a workspace (output could be json or yaml)
 - `dev_cli workspace get_container` - Get a workspace's container by name, by default the current if in one
 - `dev_cli workspace list` - List all the workspaces
 - `dev_cli workspace start` - Start a workspace by name
@@ -38,7 +37,7 @@ Inside of this module there will be multiple categories of commands that will be
 - `dev_cli shell it` - Start an interactive shell in the current workspace
 - `dev_cli shell exec` - Execute a command in the current workspace
 
-#### Completion - TODO
+#### Completion - Working
 
 - `dev_cli completion -s $TERMINAL_KIND` - Output $TERMINAL_KIND completion script
 

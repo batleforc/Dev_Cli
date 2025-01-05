@@ -21,12 +21,17 @@ impl Helper {
         std::env::var("DEVWORKSPACE_ID").ok()
     }
 
-    pub fn get_workspace_name_from_env() -> Option<String> {
-        std::env::var("DEVWORKSPACE_NAME").ok()
+    pub fn get_namespace_from_env() -> Option<String> {
+        std::env::var("DEVWORKSPACE_NAMESPACE").ok()
     }
 
     pub fn get_podname_from_env() -> Option<String> {
         std::env::var("HOSTNAME").ok()
+    }
+
+    pub fn is_in_a_container() -> bool {
+        self::Helper::get_workspace_from_env().is_some()
+            && self::Helper::get_workspace_id_from_env().is_some()
     }
 
     #[tracing::instrument(level = "trace")]

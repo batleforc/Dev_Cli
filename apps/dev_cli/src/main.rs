@@ -5,6 +5,7 @@ use tool_tracing::{init, level::VerboseLevel, tracing_kind::Tracing};
 
 pub mod code;
 pub mod level;
+pub mod workspace;
 
 #[derive(Parser)]
 #[command(
@@ -36,6 +37,9 @@ pub enum Commands {
         /// The name of the workspace
         #[arg(short, long, global = true)]
         workspace_name: Option<String>,
+
+        #[command(subcommand)]
+        workspace: Option<workspace::Workspace>,
     },
     Code {
         #[command(subcommand)]
@@ -77,10 +81,13 @@ async fn main() {
         Some(Commands::Workspaces {
             namespace,
             workspace_name,
+            workspace,
         }) => {
-            println!("Workspaces command");
-            println!("Namespace: {:?}", namespace);
-            println!("Workspace name: {:?}", workspace_name);
+            workspace
+                .as_ref()
+                .unwrap()
+                .run(namespace.clone(), workspace_name.clone())
+                .await;
         }
         Some(Commands::Code { code }) => {
             code.as_ref().unwrap().run().await;
