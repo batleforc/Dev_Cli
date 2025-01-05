@@ -49,3 +49,13 @@ Based on the [Rust NX](https://github.com/cammisuli/monodon/tree/main/packages/r
 nx generate @monodon/rust:library my-rust-lib # Create lib
 nx generate @monodon/rust:binary my-rust-app # Create app
 ```
+
+## Developing
+
+### Prerequisites
+
+- [Rust](https://www.rust-lang.org/tools/install)
+- [Cocogitto](https://github.com/cocogitto/cocogitto)
+- [Nx](https://nx.dev/latest/node/getting-started/installation)
+- [Cargo Workspace](https://crates.io/crates/cargo-workspaces#usage)
+- [GitLeaks](https://github.com/gitleaks/gitleaks)
