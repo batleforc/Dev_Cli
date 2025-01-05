@@ -12,7 +12,7 @@ tokio = { workspace = true }
 crd = { path = "../crd" }
 helper = { path = "../helper" }
 
-jsonschema = "0.21"
+jsonschema = "0.28"
 serde = "1.0"
 serde_json = "1.0"
 serde_yaml = "0.9"

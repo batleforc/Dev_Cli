@@ -1,0 +1,28 @@
+pre_bump_hooks = [
+    "echo {{version}}",
+    "cargo audit && cargo bump {{version}} && git add Cargo.toml && git commit -m \"chore(version): set cargo version to {{version}}\"",
+]
+post_bump_hooks = ["git push", "git push origin {{version}}"]
+
+[changelog]
+path = "CHANGELOG.md"
+template = "remote"
+remote = "github.com"
+repository = "dev-cli"
+owner = "batleforc"
+authors = [
+    { username = "batleforc", signature = "Maxime Leriche" },
+    { username = "max", signature = "Maxime Leriche" },
+]
+
+[bump_profiles]
+
+[packages]
+
+[git_hooks.commit-msg]
+script = """#!/bin/sh
+set -e
+cargo fmt -v --all --check
+cargo clippy
+gitleaks protect --verbose --redact --staged
+"""

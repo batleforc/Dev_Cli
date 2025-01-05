@@ -22,7 +22,7 @@ Inside of this module there will be multiple categories of commands that will be
 - `dev_cli code open` - Open the current workspace in vscode desktop
 - `dev_cli code check` - Check if the needed vscode extension are installed and install them if needed
 
-#### Workspace - TODO
+#### Workspace - Missing restart from local
 
 - `dev_cli workspace get` - Output workspace info, and if run directly in a workspace, output the current workspace info, either ask the user to choose a workspace (output could be json or yaml)
 - `dev_cli workspace get_container` - Get a workspace's container by name, by default the current if in one
