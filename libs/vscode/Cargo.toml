@@ -7,9 +7,9 @@ edition = "2021"
 http = "1.1"
 http-body-util = "0.1"
 hyper-util = { version = "0.1", features = ["tokio"] }
-tokio = "1.40"
-tokio-util = "0.7"
-tracing = "0.1"
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+tracing = { workspace = true }
 helper = { path = "../helper" }
 kube = { workspace = true }
 k8s-openapi = { workspace = true }

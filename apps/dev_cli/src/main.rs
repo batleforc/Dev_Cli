@@ -1,10 +1,12 @@
 use clap::{CommandFactory, Parser, Subcommand};
 use clap_complete::{generate, Shell};
 use level::VerboseSwapLevel;
+use shell::spawn_shell;
 use tool_tracing::{init, level::VerboseLevel, tracing_kind::Tracing};
 
 pub mod code;
 pub mod level;
+pub mod shell;
 pub mod workspace;
 
 #[derive(Parser)]
@@ -49,6 +51,21 @@ pub enum Commands {
     Completion {
         #[arg(short, long)]
         shell: Shell,
+    },
+    /// Execute a shell command in the selected container
+    Shell {
+        /// The namespace where your workspace is
+        #[arg(short, long)]
+        namespace: String,
+        /// The name of the workspace
+        #[arg(short, long)]
+        workspace_name: String,
+        /// The name of the container to spawn the shell in
+        #[arg(short, long)]
+        container_name: Option<String>,
+
+        /// The shell to spawn
+        shell: String,
     },
 }
 
@@ -95,6 +112,20 @@ async fn main() {
         Some(Commands::Completion { shell }) => {
             let mut cmd = Cli::command();
             generate(*shell, &mut cmd, "dev_cli", &mut std::io::stdout());
+        }
+        Some(Commands::Shell {
+            namespace,
+            workspace_name,
+            container_name,
+            shell,
+        }) => {
+            spawn_shell(
+                namespace.to_string(),
+                workspace_name.to_string(),
+                container_name.clone(),
+                shell.to_string(),
+            )
+            .await
         }
         None => tracing::info!("No command provided"),
     };

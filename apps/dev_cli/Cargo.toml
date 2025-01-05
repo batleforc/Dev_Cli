@@ -11,6 +11,7 @@ tool_tracing = { path = "../../libs/tool_tracing" }
 devfile = { path = "../../libs/devfile" }
 vscode = { path = "../../libs/vscode" }
 crd = { path = "../../libs/crd" }
+shell = { path = "../../libs/shell" }
 tokio = { workspace = true }
 tracing = { workspace = true }
 k8s-openapi = { workspace = true }
