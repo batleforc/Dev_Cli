@@ -1,6 +1,8 @@
 use clap::{Subcommand, ValueEnum};
+use helper::Helper;
 
 pub mod get;
+pub mod get_container;
 
 #[derive(Debug, Clone, ValueEnum)]
 pub enum Format {
@@ -22,9 +24,17 @@ pub enum Workspace {
         format: Option<Format>,
     },
     /// Get the container of a workspace
-    GetContainer {},
+    GetContainer {
+        /// The format to output the data
+        #[arg(short, long)]
+        format: Option<Format>,
+    },
     /// List all workspaces
-    List {},
+    List {
+        /// The format to output the data
+        #[arg(short, long)]
+        format: Option<Format>,
+    },
     /// Start a workspace by name
     Start {},
     /// Stop a workspace by name
@@ -40,15 +50,21 @@ pub enum Workspace {
 impl Workspace {
     /// Run the subcommand
     pub async fn run(&self, namespace: Option<String>, workspace_name: Option<String>) {
+        let base_info = Helper::get_base_info(namespace, workspace_name).await;
+        let info = match base_info {
+            Ok(base_info) => base_info,
+            Err(err) => {
+                tracing::error!("Could not get base info : {:?}", err);
+                return;
+            }
+        };
         match self {
-            Workspace::Get { format } => {
-                self::Workspace::get(namespace, workspace_name, format.clone()).await
+            Workspace::Get { format } => self::Workspace::get(info, format.clone()).await,
+            Workspace::GetContainer { format } => {
+                self::Workspace::get_container(info, format.clone()).await;
             }
-            Workspace::GetContainer {} => {
-                println!("Get container");
-            }
-            Workspace::List {} => {
-                println!("List workspaces");
+            Workspace::List { format } => {
+                println!("List user's workspaces");
             }
             Workspace::Start {} => {
                 println!("Start workspace");

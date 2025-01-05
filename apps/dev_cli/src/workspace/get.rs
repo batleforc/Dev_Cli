@@ -1,5 +1,5 @@
 use crd::dev_work_space::DevWorkspace;
-use helper::Helper;
+use helper::{base_info::BaseInfo, Helper};
 use k8s_openapi::serde_json;
 use serde::{Deserialize, Serialize};
 
@@ -16,34 +16,15 @@ pub struct GetOutput {
 
 impl Workspace {
     #[tracing::instrument(level = "trace")]
-    pub async fn get(
-        namespace: Option<String>,
-        workspace_name: Option<String>,
-        format: Option<Format>,
-    ) {
-        if namespace.is_none() && workspace_name.is_none() && !Helper::is_in_a_container() {
-            tracing::error!("No namespace or workspace name provided and not in a workspace");
-            return;
-        }
-        let output = if namespace.is_none() && workspace_name.is_none() {
-            tracing::trace!("No namespace or workspace name provided, using current workspace");
-            GetOutput {
-                namespace: Helper::get_namespace_from_env(),
-                workspace_name: Helper::get_workspace_from_env(),
-                workspace_id: Helper::get_workspace_id_from_env(),
-                podname: Helper::get_podname_from_env(),
-                is_in_pod: Helper::is_in_a_container(),
-            }
-            // return workspace
-        } else {
-            // return workspace
+    pub async fn get(mut base_info: BaseInfo, format: Option<Format>) {
+        if base_info.is_in_pod {
             let client = match Helper::get_client().await {
                 Some(iencli) => iencli,
                 None => return,
             };
-            let devworkspace = Helper::get_api::<DevWorkspace>(client, namespace.clone());
+            let devworkspace = Helper::get_api::<DevWorkspace>(client, base_info.namespace.clone());
             let workspace = match devworkspace
-                .get(workspace_name.clone().unwrap().as_str())
+                .get(base_info.workspace_name.clone().unwrap().as_str())
                 .await
             {
                 Ok(workspace) => workspace,
@@ -53,28 +34,22 @@ impl Workspace {
                 }
             };
             let id = workspace.status.unwrap().devworkspace_id;
-            GetOutput {
-                namespace,
-                workspace_name,
-                workspace_id: Some(id),
-                podname: None,
-                is_in_pod: false,
-            }
-        };
+            base_info.workspace_id = Some(id);
+        }
 
         match format {
             Some(Format::Json) => {
-                println!("{}", serde_json::to_string_pretty(&output).unwrap());
+                println!("{}", serde_json::to_string_pretty(&base_info).unwrap());
             }
             Some(Format::Yaml) => {
-                println!("{}", serde_yaml::to_string(&output).unwrap());
+                println!("{}", serde_yaml::to_string(&base_info).unwrap());
             }
             None => {
-                println!("Namespace: {:?}", output.namespace);
-                println!("Workspace name: {:?}", output.workspace_name);
-                println!("Workspace id: {:?}", output.workspace_id);
-                println!("Podname: {:?}", output.podname);
-                println!("Is in pod: {:?}", output.is_in_pod);
+                println!("Namespace: {:?}", base_info.namespace);
+                println!("Workspace name: {:?}", base_info.workspace_name);
+                println!("Workspace id: {:?}", base_info.workspace_id);
+                println!("Podname: {:?}", base_info.podname);
+                println!("Is in pod: {:?}", base_info.is_in_pod);
             }
         }
     }

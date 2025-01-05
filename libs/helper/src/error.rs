@@ -13,3 +13,8 @@ pub enum GetAttachProcess {
     AttachError(KubeError),
     EmptyCommand,
 }
+
+#[derive(Debug)]
+pub enum GetBaseInfoError {
+    NoNsOrWsProvidedAndNotInWs,
+}

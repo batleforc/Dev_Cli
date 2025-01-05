@@ -16,6 +16,7 @@ k8s-openapi = { version = '0.24', features = ['latest', 'schemars'] }
 kube = { version = '0.98', features = ['derive', 'jsonpatch', 'ws'] }
 tokio = { version = '1', features = ['macros', 'rt-multi-thread', 'io-std'] }
 tracing = '0.1'
+serde = "1.0.217"
 
 [profile.release]
 lto = true

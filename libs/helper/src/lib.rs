@@ -1,3 +1,5 @@
+use base_info::BaseInfo;
+use error::GetBaseInfoError;
 use k8s_openapi::{api::core::v1::Pod, NamespaceResourceScope};
 use kube::{
     api::{AttachParams, AttachedProcess},
@@ -6,6 +8,7 @@ use kube::{
 use std::collections::HashMap;
 use tokio::io::AsyncReadExt;
 
+pub mod base_info;
 pub mod error;
 pub mod select_pod;
 
@@ -138,6 +141,35 @@ impl Helper {
                 tracing::error!("Could not exec into pod : {:?}", err);
                 return Err(error::GetAttachProcess::AttachError(err));
             }
+        }
+    }
+
+    #[tracing::instrument(level = "trace")]
+    pub async fn get_base_info(
+        namespace: Option<String>,
+        workspace_name: Option<String>,
+    ) -> Result<BaseInfo, GetBaseInfoError> {
+        if !self::Helper::is_in_a_container() && namespace.is_none() && workspace_name.is_none() {
+            tracing::error!("No namespace or workspace name provided and not in a workspace");
+            return Err(GetBaseInfoError::NoNsOrWsProvidedAndNotInWs);
+        }
+        if namespace.is_none() && workspace_name.is_none() {
+            tracing::trace!("No namespace or workspace name provided, using current workspace");
+            Ok(BaseInfo {
+                namespace: self::Helper::get_namespace_from_env(),
+                workspace_name: self::Helper::get_workspace_from_env(),
+                workspace_id: self::Helper::get_workspace_id_from_env(),
+                podname: self::Helper::get_podname_from_env(),
+                is_in_pod: true,
+            })
+        } else {
+            Ok(BaseInfo {
+                namespace,
+                workspace_name,
+                workspace_id: None,
+                podname: None,
+                is_in_pod: false,
+            })
         }
     }
 }
