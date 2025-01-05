@@ -1,6 +1,6 @@
 pre_bump_hooks = [
     "echo {{version}}",
-    "cargo audit && cargo workspaces version custom {{version}} && git add . && git commit -m \"chore(version): set cargo version to {{version}}\"",
+    "cargo audit && cargo workspaces version custom {{version}} && git add *.toml && git commit -m \"chore(version): set cargo version to {{version}}\"",
 ]
 post_bump_hooks = ["git push", "git push origin {{version}}"]
 
