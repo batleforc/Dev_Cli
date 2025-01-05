@@ -3,6 +3,7 @@ use helper::Helper;
 
 pub mod get;
 pub mod get_container;
+pub mod list;
 
 #[derive(Debug, Clone, ValueEnum)]
 pub enum Format {
@@ -64,7 +65,7 @@ impl Workspace {
                 self::Workspace::get_container(info, format.clone()).await;
             }
             Workspace::List { format } => {
-                println!("List user's workspaces");
+                self::Workspace::list(info, format.clone()).await;
             }
             Workspace::Start {} => {
                 println!("Start workspace");

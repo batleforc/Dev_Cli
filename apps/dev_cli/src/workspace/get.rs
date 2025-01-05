@@ -45,11 +45,11 @@ impl Workspace {
                 println!("{}", serde_yaml::to_string(&base_info).unwrap());
             }
             None => {
-                println!("Namespace: {:?}", base_info.namespace);
-                println!("Workspace name: {:?}", base_info.workspace_name);
-                println!("Workspace id: {:?}", base_info.workspace_id);
-                println!("Podname: {:?}", base_info.podname);
-                println!("Is in pod: {:?}", base_info.is_in_pod);
+                tracing::info!("Namespace: {:?}", base_info.namespace);
+                tracing::info!("Workspace name: {:?}", base_info.workspace_name);
+                tracing::info!("Workspace id: {:?}", base_info.workspace_id);
+                tracing::info!("Podname: {:?}", base_info.podname);
+                tracing::info!("Is in pod: {:?}", base_info.is_in_pod);
             }
         }
     }
