@@ -8,7 +8,7 @@ post_bump_hooks = ["git push", "git push origin {{version}}"]
 path = "CHANGELOG.md"
 template = "remote"
 remote = "github.com"
-repository = "poc-che-dev-cli"
+repository = "Dev_Cli"
 owner = "batleforc"
 authors = [
     { username = "batleforc", signature = "Max weebo" },

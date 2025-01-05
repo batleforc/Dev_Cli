@@ -32,10 +32,9 @@ Inside of this module there will be multiple categories of commands that will be
 - `dev_cli workspace restart` - Restart a workspace by name
 - `dev_cli workspace restart_from_local` - Restart from local devfile
 
-#### Shell - TODO
+#### Shell - Working
 
-- `dev_cli shell it` - Start an interactive shell in the current workspace
-- `dev_cli shell exec` - Execute a command in the current workspace
+- `dev_cli shell` - Start an interactive shell in the current workspace
 
 #### Completion - Working
 
