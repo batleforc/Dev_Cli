@@ -4,6 +4,9 @@ use helper::Helper;
 pub mod get;
 pub mod get_container;
 pub mod list;
+pub mod restart;
+pub mod start;
+pub mod stop;
 
 #[derive(Debug, Clone, ValueEnum)]
 pub enum Format {
@@ -37,9 +40,17 @@ pub enum Workspace {
         format: Option<Format>,
     },
     /// Start a workspace by name
-    Start {},
+    Start {
+        /// Wait for the workspace to be started
+        #[arg(long)]
+        wait: bool,
+    },
     /// Stop a workspace by name
-    Stop {},
+    Stop {
+        /// Wait for the workspace to be stopped
+        #[arg(long)]
+        wait: bool,
+    },
     /// Restart a workspace by name
     Restart {
         /// Wait for the workspace to be started
@@ -67,14 +78,14 @@ impl Workspace {
             Workspace::List { format } => {
                 self::Workspace::list(info, format.clone()).await;
             }
-            Workspace::Start {} => {
-                println!("Start workspace");
+            Workspace::Start { wait } => {
+                self::Workspace::start(info, *wait).await;
             }
-            Workspace::Stop {} => {
-                println!("Stop workspace");
+            Workspace::Stop { wait } => {
+                self::Workspace::stop(info, *wait).await;
             }
             Workspace::Restart { wait } => {
-                println!("Restart workspace");
+                self::Workspace::restart(*wait, info).await;
             }
         }
     }
