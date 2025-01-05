@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [2.1.0](https://github.com/batleforc/Dev_Cli/compare/f5d69056ec47e595f1067003b7bdff1d3fbd8e81..2.1.0) - 2025-01-05
+#### Features
+- WIP on commit version - ([f5d6905](https://github.com/batleforc/Dev_Cli/commit/f5d69056ec47e595f1067003b7bdff1d3fbd8e81)) - Max batleforc
+
+- - -
+
 ## [2.0.0](https://github.com/batleforc/Dev_Cli/compare/68beaac19f7f5849398ea42dee75fd3ac814f787..2.0.0) - 2025-01-05
 #### Features
 - Come back to a nominal state - ([a6a6386](https://github.com/batleforc/Dev_Cli/commit/a6a6386b70e3ad278a1bb3dd2ce30c716de9ef26)) - Max batleforc
