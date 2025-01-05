@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [2.0.0](https://github.com/batleforc/Dev_Cli/compare/68beaac19f7f5849398ea42dee75fd3ac814f787..2.0.0) - 2025-01-05
+#### Features
+- Come back to a nominal state - ([a6a6386](https://github.com/batleforc/Dev_Cli/commit/a6a6386b70e3ad278a1bb3dd2ce30c716de9ef26)) - Max batleforc
+- working remote shell with it's package - ([6f59f3a](https://github.com/batleforc/Dev_Cli/commit/6f59f3a57f4a46a265d0a72c2d1f7376d57a1acc)) - Max batleforc
+- More doc on dev - ([68beaac](https://github.com/batleforc/Dev_Cli/commit/68beaac19f7f5849398ea42dee75fd3ac814f787)) - Max batleforc
+
+- - -
+
 ## [1.0.0](https://github.com/batleforc/poc-che-dev-cli/compare/68f5c495c7cf4d22af169208ad2db7961713a5a8..1.0.0) - 2025-01-05
 #### Bug Fixes
 - change git add . - ([c60d553](https://github.com/batleforc/poc-che-dev-cli/commit/c60d55363bcf724d972e7e87c037fa64db52373e)) - Max batleforc
