@@ -51,6 +51,24 @@ nx generate @monodon/rust:binary my-rust-app # Create app
 
 ## Developing
 
+### NotaBene
+
+- To detect DevSpace/Eclipse Che there is some env var that's available.
+  ![exemple](./doc/image/var-env-in-devspaces.png)
+- You can start/stop with a simple patch [Code Source](https://github.com/che-incubator/che-code/blob/6e0a908d58cacb380c216dde3af544d75e3913d5/code/extensions/che-api/src/impl/k8s-workspace-service-impl.ts#L62)
+
+### CRD handling and generating
+
+You can get the CRD def with `kubectl explain devworkspace` for exemple, the `src/crd` include the Modop to generate new CRD or update existing one based based on the neeeded crd.
+
+### Restart from local Devfile
+
+Has of now the restart in VsCode is not fit for other ide [(How it's done in che-code)](https://github.com/che-incubator/che-code/blob/main/code/extensions/che-remote/src/extension.ts#L75). This way of working need to be tweaked for Idea and futur other ide. To make it easier i found the annotation "che.eclipse.org/che-editor" in the DevWorkspace CRD that include the editor passed on startup (Could be interesting to include the one in .che/che-editor if the other one is not found)
+
+### Dockerfile/DevFile templating
+
+Long story short i would like to include in another submodule/cli close to this one (it's possible that in the futur i pop out this part) a module that would act has a component library who would output a Dockerfile including all your need. Atm i have made the batleforc/che-base that include the base tool that i deemed necessary and made some variant based on it including different tool (sdkman for a full java image, Rust and cargo for a rust variant, etc). BUT i may need in some case to reduce the size of those image (ATM less than 1Go).
+
 ### Prerequisites
 
 - [Rust](https://www.rust-lang.org/tools/install)
