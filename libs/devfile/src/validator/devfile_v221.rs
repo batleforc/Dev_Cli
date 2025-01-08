@@ -3155,6 +3155,7 @@ impl<'de> ::serde::Deserialize<'de> for DevfileSchemaVersion221CommandsItemVaria
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221CommandsItemVariant2Composite {
     #[doc = "The commands that comprise this composite command"]
     #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
@@ -3173,16 +3174,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221CommandsItemVariant2Composite>
 {
     fn from(value: &DevfileSchemaVersion221CommandsItemVariant2Composite) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221CommandsItemVariant2Composite {
-    fn default() -> Self {
-        Self {
-            commands: Default::default(),
-            group: Default::default(),
-            label: Default::default(),
-            parallel: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221CommandsItemVariant2Composite {
@@ -4351,6 +4342,7 @@ impl DevfileSchemaVersion221ComponentsItemVariant0Container {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ComponentsItemVariant0ContainerAnnotation {
     #[doc = "Annotations to be added to deployment"]
     #[serde(
@@ -4370,14 +4362,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ComponentsItemVariant0Containe
 {
     fn from(value: &DevfileSchemaVersion221ComponentsItemVariant0ContainerAnnotation) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ComponentsItemVariant0ContainerAnnotation {
-    fn default() -> Self {
-        Self {
-            deployment: Default::default(),
-            service: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ComponentsItemVariant0ContainerAnnotation {
@@ -4529,8 +4513,10 @@ impl DevfileSchemaVersion221ComponentsItemVariant0ContainerEndpointsItem {
     PartialEq,
     PartialOrd,
 )]
+#[derive(Default)]
 pub enum DevfileSchemaVersion221ComponentsItemVariant0ContainerEndpointsItemExposure {
     #[serde(rename = "public")]
+    #[default]
     Public,
     #[serde(rename = "internal")]
     Internal,
@@ -4596,13 +4582,6 @@ impl ::std::convert::TryFrom<::std::string::String>
         value: ::std::string::String,
     ) -> ::std::result::Result<Self, self::error::ConversionError> {
         value.parse()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ComponentsItemVariant0ContainerEndpointsItemExposure
-{
-    fn default() -> Self {
-        DevfileSchemaVersion221ComponentsItemVariant0ContainerEndpointsItemExposure::Public
     }
 }
 #[doc = "DevfileSchemaVersion221ComponentsItemVariant0ContainerEndpointsItemName"]
@@ -4738,8 +4717,10 @@ impl<'de> ::serde::Deserialize<'de>
     PartialEq,
     PartialOrd,
 )]
+#[derive(Default)]
 pub enum DevfileSchemaVersion221ComponentsItemVariant0ContainerEndpointsItemProtocol {
     #[serde(rename = "http")]
+    #[default]
     Http,
     #[serde(rename = "https")]
     Https,
@@ -4817,13 +4798,6 @@ impl ::std::convert::TryFrom<::std::string::String>
         value: ::std::string::String,
     ) -> ::std::result::Result<Self, self::error::ConversionError> {
         value.parse()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ComponentsItemVariant0ContainerEndpointsItemProtocol
-{
-    fn default() -> Self {
-        DevfileSchemaVersion221ComponentsItemVariant0ContainerEndpointsItemProtocol::Http
     }
 }
 #[doc = "DevfileSchemaVersion221ComponentsItemVariant0ContainerEnvItem"]
@@ -5407,8 +5381,10 @@ impl DevfileSchemaVersion221ComponentsItemVariant1KubernetesVariant0EndpointsIte
     PartialEq,
     PartialOrd,
 )]
+#[derive(Default)]
 pub enum DevfileSchemaVersion221ComponentsItemVariant1KubernetesVariant0EndpointsItemExposure {
     #[serde(rename = "public")]
+    #[default]
     Public,
     #[serde(rename = "internal")]
     Internal,
@@ -5474,13 +5450,6 @@ impl ::std::convert::TryFrom<::std::string::String>
         value: ::std::string::String,
     ) -> ::std::result::Result<Self, self::error::ConversionError> {
         value.parse()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ComponentsItemVariant1KubernetesVariant0EndpointsItemExposure
-{
-    fn default() -> Self {
-        DevfileSchemaVersion221ComponentsItemVariant1KubernetesVariant0EndpointsItemExposure::Public
     }
 }
 #[doc = "DevfileSchemaVersion221ComponentsItemVariant1KubernetesVariant0EndpointsItemName"]
@@ -5622,8 +5591,10 @@ impl<'de> ::serde::Deserialize<'de>
     PartialEq,
     PartialOrd,
 )]
+#[derive(Default)]
 pub enum DevfileSchemaVersion221ComponentsItemVariant1KubernetesVariant0EndpointsItemProtocol {
     #[serde(rename = "http")]
+    #[default]
     Http,
     #[serde(rename = "https")]
     Https,
@@ -5701,13 +5672,6 @@ impl ::std::convert::TryFrom<::std::string::String>
         value: ::std::string::String,
     ) -> ::std::result::Result<Self, self::error::ConversionError> {
         value.parse()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ComponentsItemVariant1KubernetesVariant0EndpointsItemProtocol
-{
-    fn default() -> Self {
-        DevfileSchemaVersion221ComponentsItemVariant1KubernetesVariant0EndpointsItemProtocol::Http
     }
 }
 #[doc = "DevfileSchemaVersion221ComponentsItemVariant1KubernetesVariant1EndpointsItem"]
@@ -5860,8 +5824,10 @@ impl DevfileSchemaVersion221ComponentsItemVariant1KubernetesVariant1EndpointsIte
     PartialEq,
     PartialOrd,
 )]
+#[derive(Default)]
 pub enum DevfileSchemaVersion221ComponentsItemVariant1KubernetesVariant1EndpointsItemExposure {
     #[serde(rename = "public")]
+    #[default]
     Public,
     #[serde(rename = "internal")]
     Internal,
@@ -5927,13 +5893,6 @@ impl ::std::convert::TryFrom<::std::string::String>
         value: ::std::string::String,
     ) -> ::std::result::Result<Self, self::error::ConversionError> {
         value.parse()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ComponentsItemVariant1KubernetesVariant1EndpointsItemExposure
-{
-    fn default() -> Self {
-        DevfileSchemaVersion221ComponentsItemVariant1KubernetesVariant1EndpointsItemExposure::Public
     }
 }
 #[doc = "DevfileSchemaVersion221ComponentsItemVariant1KubernetesVariant1EndpointsItemName"]
@@ -6075,8 +6034,10 @@ impl<'de> ::serde::Deserialize<'de>
     PartialEq,
     PartialOrd,
 )]
+#[derive(Default)]
 pub enum DevfileSchemaVersion221ComponentsItemVariant1KubernetesVariant1EndpointsItemProtocol {
     #[serde(rename = "http")]
+    #[default]
     Http,
     #[serde(rename = "https")]
     Https,
@@ -6154,13 +6115,6 @@ impl ::std::convert::TryFrom<::std::string::String>
         value: ::std::string::String,
     ) -> ::std::result::Result<Self, self::error::ConversionError> {
         value.parse()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ComponentsItemVariant1KubernetesVariant1EndpointsItemProtocol
-{
-    fn default() -> Self {
-        DevfileSchemaVersion221ComponentsItemVariant1KubernetesVariant1EndpointsItemProtocol::Http
     }
 }
 #[doc = "Mandatory name that allows referencing the component from other elements (such as commands) or from an external devfile that may reference this component through a parent or a plugin."]
@@ -6635,8 +6589,10 @@ impl DevfileSchemaVersion221ComponentsItemVariant2OpenshiftVariant0EndpointsItem
     PartialEq,
     PartialOrd,
 )]
+#[derive(Default)]
 pub enum DevfileSchemaVersion221ComponentsItemVariant2OpenshiftVariant0EndpointsItemExposure {
     #[serde(rename = "public")]
+    #[default]
     Public,
     #[serde(rename = "internal")]
     Internal,
@@ -6702,13 +6658,6 @@ impl ::std::convert::TryFrom<::std::string::String>
         value: ::std::string::String,
     ) -> ::std::result::Result<Self, self::error::ConversionError> {
         value.parse()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ComponentsItemVariant2OpenshiftVariant0EndpointsItemExposure
-{
-    fn default() -> Self {
-        DevfileSchemaVersion221ComponentsItemVariant2OpenshiftVariant0EndpointsItemExposure::Public
     }
 }
 #[doc = "DevfileSchemaVersion221ComponentsItemVariant2OpenshiftVariant0EndpointsItemName"]
@@ -6850,8 +6799,10 @@ impl<'de> ::serde::Deserialize<'de>
     PartialEq,
     PartialOrd,
 )]
+#[derive(Default)]
 pub enum DevfileSchemaVersion221ComponentsItemVariant2OpenshiftVariant0EndpointsItemProtocol {
     #[serde(rename = "http")]
+    #[default]
     Http,
     #[serde(rename = "https")]
     Https,
@@ -6929,13 +6880,6 @@ impl ::std::convert::TryFrom<::std::string::String>
         value: ::std::string::String,
     ) -> ::std::result::Result<Self, self::error::ConversionError> {
         value.parse()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ComponentsItemVariant2OpenshiftVariant0EndpointsItemProtocol
-{
-    fn default() -> Self {
-        DevfileSchemaVersion221ComponentsItemVariant2OpenshiftVariant0EndpointsItemProtocol::Http
     }
 }
 #[doc = "DevfileSchemaVersion221ComponentsItemVariant2OpenshiftVariant1EndpointsItem"]
@@ -7088,8 +7032,10 @@ impl DevfileSchemaVersion221ComponentsItemVariant2OpenshiftVariant1EndpointsItem
     PartialEq,
     PartialOrd,
 )]
+#[derive(Default)]
 pub enum DevfileSchemaVersion221ComponentsItemVariant2OpenshiftVariant1EndpointsItemExposure {
     #[serde(rename = "public")]
+    #[default]
     Public,
     #[serde(rename = "internal")]
     Internal,
@@ -7155,13 +7101,6 @@ impl ::std::convert::TryFrom<::std::string::String>
         value: ::std::string::String,
     ) -> ::std::result::Result<Self, self::error::ConversionError> {
         value.parse()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ComponentsItemVariant2OpenshiftVariant1EndpointsItemExposure
-{
-    fn default() -> Self {
-        DevfileSchemaVersion221ComponentsItemVariant2OpenshiftVariant1EndpointsItemExposure::Public
     }
 }
 #[doc = "DevfileSchemaVersion221ComponentsItemVariant2OpenshiftVariant1EndpointsItemName"]
@@ -7303,8 +7242,10 @@ impl<'de> ::serde::Deserialize<'de>
     PartialEq,
     PartialOrd,
 )]
+#[derive(Default)]
 pub enum DevfileSchemaVersion221ComponentsItemVariant2OpenshiftVariant1EndpointsItemProtocol {
     #[serde(rename = "http")]
+    #[default]
     Http,
     #[serde(rename = "https")]
     Https,
@@ -7382,13 +7323,6 @@ impl ::std::convert::TryFrom<::std::string::String>
         value: ::std::string::String,
     ) -> ::std::result::Result<Self, self::error::ConversionError> {
         value.parse()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ComponentsItemVariant2OpenshiftVariant1EndpointsItemProtocol
-{
-    fn default() -> Self {
-        DevfileSchemaVersion221ComponentsItemVariant2OpenshiftVariant1EndpointsItemProtocol::Http
     }
 }
 #[doc = "Mandatory name that allows referencing the component from other elements (such as commands) or from an external devfile that may reference this component through a parent or a plugin."]
@@ -7505,6 +7439,7 @@ impl<'de> ::serde::Deserialize<'de> for DevfileSchemaVersion221ComponentsItemVar
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ComponentsItemVariant3Volume {
     #[doc = "Ephemeral volumes are not stored persistently across restarts. Defaults to false"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -7518,14 +7453,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ComponentsItemVariant3Volume>
 {
     fn from(value: &DevfileSchemaVersion221ComponentsItemVariant3Volume) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ComponentsItemVariant3Volume {
-    fn default() -> Self {
-        Self {
-            ephemeral: Default::default(),
-            size: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ComponentsItemVariant3Volume {
@@ -8024,6 +7951,7 @@ impl DevfileSchemaVersion221ComponentsItemVariant4ImageDockerfileVariant2Git {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ComponentsItemVariant4ImageDockerfileVariant2GitCheckoutFrom {
     #[doc = "The remote name should be used as init. Required if there are more than one remote configured"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -8041,16 +7969,6 @@ impl
         value: &DevfileSchemaVersion221ComponentsItemVariant4ImageDockerfileVariant2GitCheckoutFrom,
     ) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ComponentsItemVariant4ImageDockerfileVariant2GitCheckoutFrom
-{
-    fn default() -> Self {
-        Self {
-            remote: Default::default(),
-            revision: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ComponentsItemVariant4ImageDockerfileVariant2GitCheckoutFrom {
@@ -8194,6 +8112,7 @@ impl<'de> ::serde::Deserialize<'de> for DevfileSchemaVersion221ComponentsItemVar
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221Events {
     #[doc = "IDs of commands that should be executed after the devworkspace is completely started. In the case of Che-Theia, these commands should be executed after all plugins and extensions have started, including project cloning. This means that those commands are not triggered until the user opens the IDE in his browser."]
     #[serde(
@@ -8227,16 +8146,6 @@ pub struct DevfileSchemaVersion221Events {
 impl ::std::convert::From<&DevfileSchemaVersion221Events> for DevfileSchemaVersion221Events {
     fn from(value: &DevfileSchemaVersion221Events) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221Events {
-    fn default() -> Self {
-        Self {
-            post_start: Default::default(),
-            post_stop: Default::default(),
-            pre_start: Default::default(),
-            pre_stop: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221Events {
@@ -8331,6 +8240,7 @@ impl DevfileSchemaVersion221Events {
 #[doc = r" ```"]
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221Metadata {
     #[doc = "Optional list of processor architectures that the devfile supports, empty list suggests that the devfile can be used on any architecture"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -8394,26 +8304,6 @@ pub struct DevfileSchemaVersion221Metadata {
 impl ::std::convert::From<&DevfileSchemaVersion221Metadata> for DevfileSchemaVersion221Metadata {
     fn from(value: &DevfileSchemaVersion221Metadata) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221Metadata {
-    fn default() -> Self {
-        Self {
-            architectures: Default::default(),
-            attributes: Default::default(),
-            description: Default::default(),
-            display_name: Default::default(),
-            global_memory_limit: Default::default(),
-            icon: Default::default(),
-            language: Default::default(),
-            name: Default::default(),
-            project_type: Default::default(),
-            provider: Default::default(),
-            support_url: Default::default(),
-            tags: Default::default(),
-            version: Default::default(),
-            website: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221Metadata {
@@ -9989,6 +9879,7 @@ impl ::std::convert::From<&Self> for DevfileSchemaVersion221ParentVariant0Comman
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0CommandsItemVariant0Exec {
     #[doc = "The actual command-line string\n\nSpecial variables that can be used:\n\n - `$PROJECTS_ROOT`: A path where projects sources are mounted as defined by container component's sourceMapping.\n\n - `$PROJECT_SOURCE`: A path to a project source ($PROJECTS_ROOT/<project-name>). If there are multiple projects, this will point to the directory of the first one."]
     #[serde(
@@ -10029,19 +9920,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant0CommandsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant0CommandsItemVariant0Exec) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ParentVariant0CommandsItemVariant0Exec {
-    fn default() -> Self {
-        Self {
-            command_line: Default::default(),
-            component: Default::default(),
-            env: Default::default(),
-            group: Default::default(),
-            hot_reload_capable: Default::default(),
-            label: Default::default(),
-            working_dir: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant0CommandsItemVariant0Exec {
@@ -10122,6 +10000,7 @@ impl DevfileSchemaVersion221ParentVariant0CommandsItemVariant0ExecEnvItem {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0CommandsItemVariant0ExecGroup {
     #[doc = "Identifies the default command for a given group kind"]
     #[serde(
@@ -10141,16 +10020,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant0CommandsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant0CommandsItemVariant0ExecGroup) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant0CommandsItemVariant0ExecGroup
-{
-    fn default() -> Self {
-        Self {
-            is_default: Default::default(),
-            kind: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant0CommandsItemVariant0ExecGroup {
@@ -10404,6 +10273,7 @@ impl<'de> ::serde::Deserialize<'de>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0CommandsItemVariant1Apply {
     #[doc = "Describes component that will be applied"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -10420,15 +10290,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant0CommandsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant0CommandsItemVariant1Apply) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ParentVariant0CommandsItemVariant1Apply {
-    fn default() -> Self {
-        Self {
-            component: Default::default(),
-            group: Default::default(),
-            label: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant0CommandsItemVariant1Apply {
@@ -10467,6 +10328,7 @@ impl DevfileSchemaVersion221ParentVariant0CommandsItemVariant1Apply {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0CommandsItemVariant1ApplyGroup {
     #[doc = "Identifies the default command for a given group kind"]
     #[serde(
@@ -10486,16 +10348,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant0CommandsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant0CommandsItemVariant1ApplyGroup) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant0CommandsItemVariant1ApplyGroup
-{
-    fn default() -> Self {
-        Self {
-            is_default: Default::default(),
-            kind: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant0CommandsItemVariant1ApplyGroup {
@@ -10756,6 +10608,7 @@ impl<'de> ::serde::Deserialize<'de>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0CommandsItemVariant2Composite {
     #[doc = "The commands that comprise this composite command"]
     #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
@@ -10776,18 +10629,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant0CommandsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant0CommandsItemVariant2Composite) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant0CommandsItemVariant2Composite
-{
-    fn default() -> Self {
-        Self {
-            commands: Default::default(),
-            group: Default::default(),
-            label: Default::default(),
-            parallel: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant0CommandsItemVariant2Composite {
@@ -10827,6 +10668,7 @@ impl DevfileSchemaVersion221ParentVariant0CommandsItemVariant2Composite {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0CommandsItemVariant2CompositeGroup {
     #[doc = "Identifies the default command for a given group kind"]
     #[serde(
@@ -10848,16 +10690,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant0CommandsItemVari
         value: &DevfileSchemaVersion221ParentVariant0CommandsItemVariant2CompositeGroup,
     ) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant0CommandsItemVariant2CompositeGroup
-{
-    fn default() -> Self {
-        Self {
-            is_default: Default::default(),
-            kind: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant0CommandsItemVariant2CompositeGroup {
@@ -11844,6 +11676,7 @@ impl ::std::convert::From<&Self> for DevfileSchemaVersion221ParentVariant0Compon
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0ComponentsItemVariant0Container {
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
     pub annotation: ::std::option::Option<
@@ -11928,28 +11761,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant0ComponentsItemVa
         value.clone()
     }
 }
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant0ComponentsItemVariant0Container
-{
-    fn default() -> Self {
-        Self {
-            annotation: Default::default(),
-            args: Default::default(),
-            command: Default::default(),
-            cpu_limit: Default::default(),
-            cpu_request: Default::default(),
-            dedicated_pod: Default::default(),
-            endpoints: Default::default(),
-            env: Default::default(),
-            image: Default::default(),
-            memory_limit: Default::default(),
-            memory_request: Default::default(),
-            mount_sources: Default::default(),
-            source_mapping: Default::default(),
-            volume_mounts: Default::default(),
-        }
-    }
-}
 impl DevfileSchemaVersion221ParentVariant0ComponentsItemVariant0Container {
     pub fn builder() -> builder::DevfileSchemaVersion221ParentVariant0ComponentsItemVariant0Container
     {
@@ -11986,6 +11797,7 @@ impl DevfileSchemaVersion221ParentVariant0ComponentsItemVariant0Container {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0ComponentsItemVariant0ContainerAnnotation {
     #[doc = "Annotations to be added to deployment"]
     #[serde(
@@ -12009,16 +11821,6 @@ impl
         value: &DevfileSchemaVersion221ParentVariant0ComponentsItemVariant0ContainerAnnotation,
     ) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant0ComponentsItemVariant0ContainerAnnotation
-{
-    fn default() -> Self {
-        Self {
-            deployment: Default::default(),
-            service: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant0ComponentsItemVariant0ContainerAnnotation {
@@ -14120,6 +13922,7 @@ impl<'de> ::serde::Deserialize<'de>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0ComponentsItemVariant3Volume {
     #[doc = "Ephemeral volumes are not stored persistently across restarts. Defaults to false"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -14133,14 +13936,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant0ComponentsItemVa
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant0ComponentsItemVariant3Volume) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ParentVariant0ComponentsItemVariant3Volume {
-    fn default() -> Self {
-        Self {
-            ephemeral: Default::default(),
-            size: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant0ComponentsItemVariant3Volume {
@@ -14442,6 +14237,7 @@ impl ::std::convert::From<&Self>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry
 {
     #[doc = "Id in a devfile registry that contains a Dockerfile. The src in the OCI registry required for the Dockerfile build will be downloaded for building the image."]
@@ -14456,7 +14252,6 @@ pub struct DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVaria
     pub registry_url: ::std::option::Option<::std::string::String>,
 }
 impl :: std :: convert :: From < & DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry > for DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry { fn from (value : & DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry) -> Self { value . clone () } }
-impl :: std :: default :: Default for DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry { fn default () -> Self { Self { id : Default :: default () , registry_url : Default :: default () , } } }
 impl DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry { pub fn builder () -> builder :: DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry { Default :: default () } }
 #[doc = "Dockerfile's Git source"]
 #[doc = r""]
@@ -14500,9 +14295,9 @@ impl DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0Doc
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant2Git { # [serde (rename = "checkoutFrom" , default , skip_serializing_if = "::std::option::Option::is_none")] pub checkout_from : :: std :: option :: Option < DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom > , # [doc = "Location of the Dockerfile in the Git repository when using git as Dockerfile src. Defaults to Dockerfile."] # [serde (rename = "fileLocation" , default , skip_serializing_if = "::std::option::Option::is_none")] pub file_location : :: std :: option :: Option < :: std :: string :: String > , # [doc = "The remotes map which should be initialized in the git project. Projects must have at least one remote configured while StarterProjects & Image Component's Git source can only have at most one remote configured."] # [serde (default , skip_serializing_if = ":: std :: collections :: HashMap::is_empty")] pub remotes : :: std :: collections :: HashMap < :: std :: string :: String , :: std :: string :: String > , }
 impl :: std :: convert :: From < & DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant2Git > for DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant2Git { fn from (value : & DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant2Git) -> Self { value . clone () } }
-impl :: std :: default :: Default for DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant2Git { fn default () -> Self { Self { checkout_from : Default :: default () , file_location : Default :: default () , remotes : Default :: default () , } } }
 impl DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant2Git {
     pub fn builder () -> builder :: DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant2Git{
         Default::default()
@@ -14532,6 +14327,7 @@ impl DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0Doc
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom
 {
     #[doc = "The remote name should be used as init. Required if there are more than one remote configured"]
@@ -14542,7 +14338,6 @@ pub struct DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVaria
     pub revision: ::std::option::Option<::std::string::String>,
 }
 impl :: std :: convert :: From < & DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom > for DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom { fn from (value : & DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom) -> Self { value . clone () } }
-impl :: std :: default :: Default for DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom { fn default () -> Self { Self { remote : Default :: default () , revision : Default :: default () , } } }
 impl DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom { pub fn builder () -> builder :: DevfileSchemaVersion221ParentVariant0ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom { Default :: default () } }
 #[doc = "Mandatory name that allows referencing the component from other elements (such as commands) or from an external devfile that may reference this component through a parent or a plugin."]
 #[doc = r""]
@@ -14798,6 +14593,7 @@ impl ::std::convert::From<&Self> for DevfileSchemaVersion221ParentVariant0Projec
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0ProjectsItemVariant0Git {
     #[serde(
         rename = "checkoutFrom",
@@ -14819,14 +14615,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant0ProjectsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant0ProjectsItemVariant0Git) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ParentVariant0ProjectsItemVariant0Git {
-    fn default() -> Self {
-        Self {
-            checkout_from: Default::default(),
-            remotes: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant0ProjectsItemVariant0Git {
@@ -14858,6 +14646,7 @@ impl DevfileSchemaVersion221ParentVariant0ProjectsItemVariant0Git {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0ProjectsItemVariant0GitCheckoutFrom {
     #[doc = "The remote name should be used as init. Required if there are more than one remote configured"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -14873,16 +14662,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant0ProjectsItemVari
         value: &DevfileSchemaVersion221ParentVariant0ProjectsItemVariant0GitCheckoutFrom,
     ) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant0ProjectsItemVariant0GitCheckoutFrom
-{
-    fn default() -> Self {
-        Self {
-            remote: Default::default(),
-            revision: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant0ProjectsItemVariant0GitCheckoutFrom {
@@ -15099,6 +14878,7 @@ impl<'de> ::serde::Deserialize<'de>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0ProjectsItemVariant1Zip {
     #[doc = "Zip project's source location address. Should be file path of the archive, e.g. file://$FILE_PATH"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -15109,13 +14889,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant0ProjectsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant0ProjectsItemVariant1Zip) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ParentVariant0ProjectsItemVariant1Zip {
-    fn default() -> Self {
-        Self {
-            location: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant0ProjectsItemVariant1Zip {
@@ -15293,6 +15066,7 @@ impl ::std::convert::From<&Self> for DevfileSchemaVersion221ParentVariant0Starte
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0StarterProjectsItemVariant0Git {
     #[serde(
         rename = "checkoutFrom",
@@ -15314,16 +15088,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant0StarterProjectsI
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant0StarterProjectsItemVariant0Git) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant0StarterProjectsItemVariant0Git
-{
-    fn default() -> Self {
-        Self {
-            checkout_from: Default::default(),
-            remotes: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant0StarterProjectsItemVariant0Git {
@@ -15356,6 +15120,7 @@ impl DevfileSchemaVersion221ParentVariant0StarterProjectsItemVariant0Git {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0StarterProjectsItemVariant0GitCheckoutFrom {
     #[doc = "The remote name should be used as init. Required if there are more than one remote configured"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -15373,16 +15138,6 @@ impl
         value: &DevfileSchemaVersion221ParentVariant0StarterProjectsItemVariant0GitCheckoutFrom,
     ) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant0StarterProjectsItemVariant0GitCheckoutFrom
-{
-    fn default() -> Self {
-        Self {
-            remote: Default::default(),
-            revision: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant0StarterProjectsItemVariant0GitCheckoutFrom {
@@ -15604,6 +15359,7 @@ impl<'de> ::serde::Deserialize<'de>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant0StarterProjectsItemVariant1Zip {
     #[doc = "Zip project's source location address. Should be file path of the archive, e.g. file://$FILE_PATH"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -15614,15 +15370,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant0StarterProjectsI
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant0StarterProjectsItemVariant1Zip) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant0StarterProjectsItemVariant1Zip
-{
-    fn default() -> Self {
-        Self {
-            location: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant0StarterProjectsItemVariant1Zip {
@@ -16012,6 +15759,7 @@ impl ::std::convert::From<&Self> for DevfileSchemaVersion221ParentVariant1Comman
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1CommandsItemVariant0Exec {
     #[doc = "The actual command-line string\n\nSpecial variables that can be used:\n\n - `$PROJECTS_ROOT`: A path where projects sources are mounted as defined by container component's sourceMapping.\n\n - `$PROJECT_SOURCE`: A path to a project source ($PROJECTS_ROOT/<project-name>). If there are multiple projects, this will point to the directory of the first one."]
     #[serde(
@@ -16052,19 +15800,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant1CommandsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant1CommandsItemVariant0Exec) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ParentVariant1CommandsItemVariant0Exec {
-    fn default() -> Self {
-        Self {
-            command_line: Default::default(),
-            component: Default::default(),
-            env: Default::default(),
-            group: Default::default(),
-            hot_reload_capable: Default::default(),
-            label: Default::default(),
-            working_dir: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant1CommandsItemVariant0Exec {
@@ -16145,6 +15880,7 @@ impl DevfileSchemaVersion221ParentVariant1CommandsItemVariant0ExecEnvItem {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1CommandsItemVariant0ExecGroup {
     #[doc = "Identifies the default command for a given group kind"]
     #[serde(
@@ -16164,16 +15900,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant1CommandsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant1CommandsItemVariant0ExecGroup) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant1CommandsItemVariant0ExecGroup
-{
-    fn default() -> Self {
-        Self {
-            is_default: Default::default(),
-            kind: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant1CommandsItemVariant0ExecGroup {
@@ -16427,6 +16153,7 @@ impl<'de> ::serde::Deserialize<'de>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1CommandsItemVariant1Apply {
     #[doc = "Describes component that will be applied"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -16443,15 +16170,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant1CommandsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant1CommandsItemVariant1Apply) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ParentVariant1CommandsItemVariant1Apply {
-    fn default() -> Self {
-        Self {
-            component: Default::default(),
-            group: Default::default(),
-            label: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant1CommandsItemVariant1Apply {
@@ -16490,6 +16208,7 @@ impl DevfileSchemaVersion221ParentVariant1CommandsItemVariant1Apply {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1CommandsItemVariant1ApplyGroup {
     #[doc = "Identifies the default command for a given group kind"]
     #[serde(
@@ -16509,16 +16228,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant1CommandsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant1CommandsItemVariant1ApplyGroup) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant1CommandsItemVariant1ApplyGroup
-{
-    fn default() -> Self {
-        Self {
-            is_default: Default::default(),
-            kind: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant1CommandsItemVariant1ApplyGroup {
@@ -16779,6 +16488,7 @@ impl<'de> ::serde::Deserialize<'de>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1CommandsItemVariant2Composite {
     #[doc = "The commands that comprise this composite command"]
     #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
@@ -16799,18 +16509,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant1CommandsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant1CommandsItemVariant2Composite) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant1CommandsItemVariant2Composite
-{
-    fn default() -> Self {
-        Self {
-            commands: Default::default(),
-            group: Default::default(),
-            label: Default::default(),
-            parallel: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant1CommandsItemVariant2Composite {
@@ -16850,6 +16548,7 @@ impl DevfileSchemaVersion221ParentVariant1CommandsItemVariant2Composite {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1CommandsItemVariant2CompositeGroup {
     #[doc = "Identifies the default command for a given group kind"]
     #[serde(
@@ -16871,16 +16570,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant1CommandsItemVari
         value: &DevfileSchemaVersion221ParentVariant1CommandsItemVariant2CompositeGroup,
     ) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant1CommandsItemVariant2CompositeGroup
-{
-    fn default() -> Self {
-        Self {
-            is_default: Default::default(),
-            kind: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant1CommandsItemVariant2CompositeGroup {
@@ -17867,6 +17556,7 @@ impl ::std::convert::From<&Self> for DevfileSchemaVersion221ParentVariant1Compon
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1ComponentsItemVariant0Container {
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
     pub annotation: ::std::option::Option<
@@ -17951,28 +17641,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant1ComponentsItemVa
         value.clone()
     }
 }
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant1ComponentsItemVariant0Container
-{
-    fn default() -> Self {
-        Self {
-            annotation: Default::default(),
-            args: Default::default(),
-            command: Default::default(),
-            cpu_limit: Default::default(),
-            cpu_request: Default::default(),
-            dedicated_pod: Default::default(),
-            endpoints: Default::default(),
-            env: Default::default(),
-            image: Default::default(),
-            memory_limit: Default::default(),
-            memory_request: Default::default(),
-            mount_sources: Default::default(),
-            source_mapping: Default::default(),
-            volume_mounts: Default::default(),
-        }
-    }
-}
 impl DevfileSchemaVersion221ParentVariant1ComponentsItemVariant0Container {
     pub fn builder() -> builder::DevfileSchemaVersion221ParentVariant1ComponentsItemVariant0Container
     {
@@ -18009,6 +17677,7 @@ impl DevfileSchemaVersion221ParentVariant1ComponentsItemVariant0Container {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1ComponentsItemVariant0ContainerAnnotation {
     #[doc = "Annotations to be added to deployment"]
     #[serde(
@@ -18032,16 +17701,6 @@ impl
         value: &DevfileSchemaVersion221ParentVariant1ComponentsItemVariant0ContainerAnnotation,
     ) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant1ComponentsItemVariant0ContainerAnnotation
-{
-    fn default() -> Self {
-        Self {
-            deployment: Default::default(),
-            service: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant1ComponentsItemVariant0ContainerAnnotation {
@@ -20143,6 +19802,7 @@ impl<'de> ::serde::Deserialize<'de>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1ComponentsItemVariant3Volume {
     #[doc = "Ephemeral volumes are not stored persistently across restarts. Defaults to false"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -20156,14 +19816,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant1ComponentsItemVa
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant1ComponentsItemVariant3Volume) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ParentVariant1ComponentsItemVariant3Volume {
-    fn default() -> Self {
-        Self {
-            ephemeral: Default::default(),
-            size: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant1ComponentsItemVariant3Volume {
@@ -20465,6 +20117,7 @@ impl ::std::convert::From<&Self>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry
 {
     #[doc = "Id in a devfile registry that contains a Dockerfile. The src in the OCI registry required for the Dockerfile build will be downloaded for building the image."]
@@ -20479,7 +20132,6 @@ pub struct DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVaria
     pub registry_url: ::std::option::Option<::std::string::String>,
 }
 impl :: std :: convert :: From < & DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry > for DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry { fn from (value : & DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry) -> Self { value . clone () } }
-impl :: std :: default :: Default for DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry { fn default () -> Self { Self { id : Default :: default () , registry_url : Default :: default () , } } }
 impl DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry { pub fn builder () -> builder :: DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry { Default :: default () } }
 #[doc = "Dockerfile's Git source"]
 #[doc = r""]
@@ -20523,9 +20175,9 @@ impl DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0Doc
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant2Git { # [serde (rename = "checkoutFrom" , default , skip_serializing_if = "::std::option::Option::is_none")] pub checkout_from : :: std :: option :: Option < DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom > , # [doc = "Location of the Dockerfile in the Git repository when using git as Dockerfile src. Defaults to Dockerfile."] # [serde (rename = "fileLocation" , default , skip_serializing_if = "::std::option::Option::is_none")] pub file_location : :: std :: option :: Option < :: std :: string :: String > , # [doc = "The remotes map which should be initialized in the git project. Projects must have at least one remote configured while StarterProjects & Image Component's Git source can only have at most one remote configured."] # [serde (default , skip_serializing_if = ":: std :: collections :: HashMap::is_empty")] pub remotes : :: std :: collections :: HashMap < :: std :: string :: String , :: std :: string :: String > , }
 impl :: std :: convert :: From < & DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant2Git > for DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant2Git { fn from (value : & DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant2Git) -> Self { value . clone () } }
-impl :: std :: default :: Default for DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant2Git { fn default () -> Self { Self { checkout_from : Default :: default () , file_location : Default :: default () , remotes : Default :: default () , } } }
 impl DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant2Git {
     pub fn builder () -> builder :: DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant2Git{
         Default::default()
@@ -20555,6 +20207,7 @@ impl DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0Doc
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom
 {
     #[doc = "The remote name should be used as init. Required if there are more than one remote configured"]
@@ -20565,7 +20218,6 @@ pub struct DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVaria
     pub revision: ::std::option::Option<::std::string::String>,
 }
 impl :: std :: convert :: From < & DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom > for DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom { fn from (value : & DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom) -> Self { value . clone () } }
-impl :: std :: default :: Default for DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom { fn default () -> Self { Self { remote : Default :: default () , revision : Default :: default () , } } }
 impl DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom { pub fn builder () -> builder :: DevfileSchemaVersion221ParentVariant1ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom { Default :: default () } }
 #[doc = "Mandatory name that allows referencing the component from other elements (such as commands) or from an external devfile that may reference this component through a parent or a plugin."]
 #[doc = r""]
@@ -20821,6 +20473,7 @@ impl ::std::convert::From<&Self> for DevfileSchemaVersion221ParentVariant1Projec
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1ProjectsItemVariant0Git {
     #[serde(
         rename = "checkoutFrom",
@@ -20842,14 +20495,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant1ProjectsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant1ProjectsItemVariant0Git) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ParentVariant1ProjectsItemVariant0Git {
-    fn default() -> Self {
-        Self {
-            checkout_from: Default::default(),
-            remotes: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant1ProjectsItemVariant0Git {
@@ -20881,6 +20526,7 @@ impl DevfileSchemaVersion221ParentVariant1ProjectsItemVariant0Git {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1ProjectsItemVariant0GitCheckoutFrom {
     #[doc = "The remote name should be used as init. Required if there are more than one remote configured"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -20896,16 +20542,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant1ProjectsItemVari
         value: &DevfileSchemaVersion221ParentVariant1ProjectsItemVariant0GitCheckoutFrom,
     ) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant1ProjectsItemVariant0GitCheckoutFrom
-{
-    fn default() -> Self {
-        Self {
-            remote: Default::default(),
-            revision: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant1ProjectsItemVariant0GitCheckoutFrom {
@@ -21122,6 +20758,7 @@ impl<'de> ::serde::Deserialize<'de>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1ProjectsItemVariant1Zip {
     #[doc = "Zip project's source location address. Should be file path of the archive, e.g. file://$FILE_PATH"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -21132,13 +20769,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant1ProjectsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant1ProjectsItemVariant1Zip) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ParentVariant1ProjectsItemVariant1Zip {
-    fn default() -> Self {
-        Self {
-            location: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant1ProjectsItemVariant1Zip {
@@ -21316,6 +20946,7 @@ impl ::std::convert::From<&Self> for DevfileSchemaVersion221ParentVariant1Starte
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1StarterProjectsItemVariant0Git {
     #[serde(
         rename = "checkoutFrom",
@@ -21337,16 +20968,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant1StarterProjectsI
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant1StarterProjectsItemVariant0Git) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant1StarterProjectsItemVariant0Git
-{
-    fn default() -> Self {
-        Self {
-            checkout_from: Default::default(),
-            remotes: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant1StarterProjectsItemVariant0Git {
@@ -21379,6 +21000,7 @@ impl DevfileSchemaVersion221ParentVariant1StarterProjectsItemVariant0Git {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1StarterProjectsItemVariant0GitCheckoutFrom {
     #[doc = "The remote name should be used as init. Required if there are more than one remote configured"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -21396,16 +21018,6 @@ impl
         value: &DevfileSchemaVersion221ParentVariant1StarterProjectsItemVariant0GitCheckoutFrom,
     ) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant1StarterProjectsItemVariant0GitCheckoutFrom
-{
-    fn default() -> Self {
-        Self {
-            remote: Default::default(),
-            revision: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant1StarterProjectsItemVariant0GitCheckoutFrom {
@@ -21627,6 +21239,7 @@ impl<'de> ::serde::Deserialize<'de>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant1StarterProjectsItemVariant1Zip {
     #[doc = "Zip project's source location address. Should be file path of the archive, e.g. file://$FILE_PATH"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -21637,15 +21250,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant1StarterProjectsI
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant1StarterProjectsItemVariant1Zip) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant1StarterProjectsItemVariant1Zip
-{
-    fn default() -> Self {
-        Self {
-            location: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant1StarterProjectsItemVariant1Zip {
@@ -22035,6 +21639,7 @@ impl ::std::convert::From<&Self> for DevfileSchemaVersion221ParentVariant2Comman
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2CommandsItemVariant0Exec {
     #[doc = "The actual command-line string\n\nSpecial variables that can be used:\n\n - `$PROJECTS_ROOT`: A path where projects sources are mounted as defined by container component's sourceMapping.\n\n - `$PROJECT_SOURCE`: A path to a project source ($PROJECTS_ROOT/<project-name>). If there are multiple projects, this will point to the directory of the first one."]
     #[serde(
@@ -22075,19 +21680,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant2CommandsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant2CommandsItemVariant0Exec) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ParentVariant2CommandsItemVariant0Exec {
-    fn default() -> Self {
-        Self {
-            command_line: Default::default(),
-            component: Default::default(),
-            env: Default::default(),
-            group: Default::default(),
-            hot_reload_capable: Default::default(),
-            label: Default::default(),
-            working_dir: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant2CommandsItemVariant0Exec {
@@ -22168,6 +21760,7 @@ impl DevfileSchemaVersion221ParentVariant2CommandsItemVariant0ExecEnvItem {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2CommandsItemVariant0ExecGroup {
     #[doc = "Identifies the default command for a given group kind"]
     #[serde(
@@ -22187,16 +21780,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant2CommandsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant2CommandsItemVariant0ExecGroup) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant2CommandsItemVariant0ExecGroup
-{
-    fn default() -> Self {
-        Self {
-            is_default: Default::default(),
-            kind: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant2CommandsItemVariant0ExecGroup {
@@ -22450,6 +22033,7 @@ impl<'de> ::serde::Deserialize<'de>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2CommandsItemVariant1Apply {
     #[doc = "Describes component that will be applied"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -22466,15 +22050,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant2CommandsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant2CommandsItemVariant1Apply) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ParentVariant2CommandsItemVariant1Apply {
-    fn default() -> Self {
-        Self {
-            component: Default::default(),
-            group: Default::default(),
-            label: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant2CommandsItemVariant1Apply {
@@ -22513,6 +22088,7 @@ impl DevfileSchemaVersion221ParentVariant2CommandsItemVariant1Apply {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2CommandsItemVariant1ApplyGroup {
     #[doc = "Identifies the default command for a given group kind"]
     #[serde(
@@ -22532,16 +22108,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant2CommandsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant2CommandsItemVariant1ApplyGroup) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant2CommandsItemVariant1ApplyGroup
-{
-    fn default() -> Self {
-        Self {
-            is_default: Default::default(),
-            kind: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant2CommandsItemVariant1ApplyGroup {
@@ -22802,6 +22368,7 @@ impl<'de> ::serde::Deserialize<'de>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2CommandsItemVariant2Composite {
     #[doc = "The commands that comprise this composite command"]
     #[serde(default, skip_serializing_if = "::std::vec::Vec::is_empty")]
@@ -22822,18 +22389,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant2CommandsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant2CommandsItemVariant2Composite) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant2CommandsItemVariant2Composite
-{
-    fn default() -> Self {
-        Self {
-            commands: Default::default(),
-            group: Default::default(),
-            label: Default::default(),
-            parallel: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant2CommandsItemVariant2Composite {
@@ -22873,6 +22428,7 @@ impl DevfileSchemaVersion221ParentVariant2CommandsItemVariant2Composite {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2CommandsItemVariant2CompositeGroup {
     #[doc = "Identifies the default command for a given group kind"]
     #[serde(
@@ -22894,16 +22450,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant2CommandsItemVari
         value: &DevfileSchemaVersion221ParentVariant2CommandsItemVariant2CompositeGroup,
     ) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant2CommandsItemVariant2CompositeGroup
-{
-    fn default() -> Self {
-        Self {
-            is_default: Default::default(),
-            kind: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant2CommandsItemVariant2CompositeGroup {
@@ -23890,6 +23436,7 @@ impl ::std::convert::From<&Self> for DevfileSchemaVersion221ParentVariant2Compon
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2ComponentsItemVariant0Container {
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
     pub annotation: ::std::option::Option<
@@ -23974,28 +23521,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant2ComponentsItemVa
         value.clone()
     }
 }
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant2ComponentsItemVariant0Container
-{
-    fn default() -> Self {
-        Self {
-            annotation: Default::default(),
-            args: Default::default(),
-            command: Default::default(),
-            cpu_limit: Default::default(),
-            cpu_request: Default::default(),
-            dedicated_pod: Default::default(),
-            endpoints: Default::default(),
-            env: Default::default(),
-            image: Default::default(),
-            memory_limit: Default::default(),
-            memory_request: Default::default(),
-            mount_sources: Default::default(),
-            source_mapping: Default::default(),
-            volume_mounts: Default::default(),
-        }
-    }
-}
 impl DevfileSchemaVersion221ParentVariant2ComponentsItemVariant0Container {
     pub fn builder() -> builder::DevfileSchemaVersion221ParentVariant2ComponentsItemVariant0Container
     {
@@ -24032,6 +23557,7 @@ impl DevfileSchemaVersion221ParentVariant2ComponentsItemVariant0Container {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2ComponentsItemVariant0ContainerAnnotation {
     #[doc = "Annotations to be added to deployment"]
     #[serde(
@@ -24055,16 +23581,6 @@ impl
         value: &DevfileSchemaVersion221ParentVariant2ComponentsItemVariant0ContainerAnnotation,
     ) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant2ComponentsItemVariant0ContainerAnnotation
-{
-    fn default() -> Self {
-        Self {
-            deployment: Default::default(),
-            service: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant2ComponentsItemVariant0ContainerAnnotation {
@@ -26166,6 +25682,7 @@ impl<'de> ::serde::Deserialize<'de>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2ComponentsItemVariant3Volume {
     #[doc = "Ephemeral volumes are not stored persistently across restarts. Defaults to false"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -26179,14 +25696,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant2ComponentsItemVa
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant2ComponentsItemVariant3Volume) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ParentVariant2ComponentsItemVariant3Volume {
-    fn default() -> Self {
-        Self {
-            ephemeral: Default::default(),
-            size: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant2ComponentsItemVariant3Volume {
@@ -26488,6 +25997,7 @@ impl ::std::convert::From<&Self>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry
 {
     #[doc = "Id in a devfile registry that contains a Dockerfile. The src in the OCI registry required for the Dockerfile build will be downloaded for building the image."]
@@ -26502,7 +26012,6 @@ pub struct DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVaria
     pub registry_url: ::std::option::Option<::std::string::String>,
 }
 impl :: std :: convert :: From < & DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry > for DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry { fn from (value : & DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry) -> Self { value . clone () } }
-impl :: std :: default :: Default for DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry { fn default () -> Self { Self { id : Default :: default () , registry_url : Default :: default () , } } }
 impl DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry { pub fn builder () -> builder :: DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant1DevfileRegistry { Default :: default () } }
 #[doc = "Dockerfile's Git source"]
 #[doc = r""]
@@ -26546,9 +26055,9 @@ impl DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0Doc
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant2Git { # [serde (rename = "checkoutFrom" , default , skip_serializing_if = "::std::option::Option::is_none")] pub checkout_from : :: std :: option :: Option < DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom > , # [doc = "Location of the Dockerfile in the Git repository when using git as Dockerfile src. Defaults to Dockerfile."] # [serde (rename = "fileLocation" , default , skip_serializing_if = "::std::option::Option::is_none")] pub file_location : :: std :: option :: Option < :: std :: string :: String > , # [doc = "The remotes map which should be initialized in the git project. Projects must have at least one remote configured while StarterProjects & Image Component's Git source can only have at most one remote configured."] # [serde (default , skip_serializing_if = ":: std :: collections :: HashMap::is_empty")] pub remotes : :: std :: collections :: HashMap < :: std :: string :: String , :: std :: string :: String > , }
 impl :: std :: convert :: From < & DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant2Git > for DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant2Git { fn from (value : & DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant2Git) -> Self { value . clone () } }
-impl :: std :: default :: Default for DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant2Git { fn default () -> Self { Self { checkout_from : Default :: default () , file_location : Default :: default () , remotes : Default :: default () , } } }
 impl DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant2Git {
     pub fn builder () -> builder :: DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant2Git{
         Default::default()
@@ -26578,6 +26087,7 @@ impl DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0Doc
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom
 {
     #[doc = "The remote name should be used as init. Required if there are more than one remote configured"]
@@ -26588,7 +26098,6 @@ pub struct DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVaria
     pub revision: ::std::option::Option<::std::string::String>,
 }
 impl :: std :: convert :: From < & DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom > for DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom { fn from (value : & DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom) -> Self { value . clone () } }
-impl :: std :: default :: Default for DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom { fn default () -> Self { Self { remote : Default :: default () , revision : Default :: default () , } } }
 impl DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom { pub fn builder () -> builder :: DevfileSchemaVersion221ParentVariant2ComponentsItemVariant4ImageVariant0DockerfileVariant2GitCheckoutFrom { Default :: default () } }
 #[doc = "Mandatory name that allows referencing the component from other elements (such as commands) or from an external devfile that may reference this component through a parent or a plugin."]
 #[doc = r""]
@@ -26886,6 +26395,7 @@ impl ::std::convert::From<&Self> for DevfileSchemaVersion221ParentVariant2Projec
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2ProjectsItemVariant0Git {
     #[serde(
         rename = "checkoutFrom",
@@ -26907,14 +26417,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant2ProjectsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant2ProjectsItemVariant0Git) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ParentVariant2ProjectsItemVariant0Git {
-    fn default() -> Self {
-        Self {
-            checkout_from: Default::default(),
-            remotes: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant2ProjectsItemVariant0Git {
@@ -26946,6 +26448,7 @@ impl DevfileSchemaVersion221ParentVariant2ProjectsItemVariant0Git {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2ProjectsItemVariant0GitCheckoutFrom {
     #[doc = "The remote name should be used as init. Required if there are more than one remote configured"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -26961,16 +26464,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant2ProjectsItemVari
         value: &DevfileSchemaVersion221ParentVariant2ProjectsItemVariant0GitCheckoutFrom,
     ) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant2ProjectsItemVariant0GitCheckoutFrom
-{
-    fn default() -> Self {
-        Self {
-            remote: Default::default(),
-            revision: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant2ProjectsItemVariant0GitCheckoutFrom {
@@ -27187,6 +26680,7 @@ impl<'de> ::serde::Deserialize<'de>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2ProjectsItemVariant1Zip {
     #[doc = "Zip project's source location address. Should be file path of the archive, e.g. file://$FILE_PATH"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -27197,13 +26691,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant2ProjectsItemVari
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant2ProjectsItemVariant1Zip) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ParentVariant2ProjectsItemVariant1Zip {
-    fn default() -> Self {
-        Self {
-            location: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant2ProjectsItemVariant1Zip {
@@ -27381,6 +26868,7 @@ impl ::std::convert::From<&Self> for DevfileSchemaVersion221ParentVariant2Starte
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2StarterProjectsItemVariant0Git {
     #[serde(
         rename = "checkoutFrom",
@@ -27402,16 +26890,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant2StarterProjectsI
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant2StarterProjectsItemVariant0Git) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant2StarterProjectsItemVariant0Git
-{
-    fn default() -> Self {
-        Self {
-            checkout_from: Default::default(),
-            remotes: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant2StarterProjectsItemVariant0Git {
@@ -27444,6 +26922,7 @@ impl DevfileSchemaVersion221ParentVariant2StarterProjectsItemVariant0Git {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2StarterProjectsItemVariant0GitCheckoutFrom {
     #[doc = "The remote name should be used as init. Required if there are more than one remote configured"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -27461,16 +26940,6 @@ impl
         value: &DevfileSchemaVersion221ParentVariant2StarterProjectsItemVariant0GitCheckoutFrom,
     ) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant2StarterProjectsItemVariant0GitCheckoutFrom
-{
-    fn default() -> Self {
-        Self {
-            remote: Default::default(),
-            revision: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant2StarterProjectsItemVariant0GitCheckoutFrom {
@@ -27692,6 +27161,7 @@ impl<'de> ::serde::Deserialize<'de>
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ParentVariant2StarterProjectsItemVariant1Zip {
     #[doc = "Zip project's source location address. Should be file path of the archive, e.g. file://$FILE_PATH"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -27702,15 +27172,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ParentVariant2StarterProjectsI
 {
     fn from(value: &DevfileSchemaVersion221ParentVariant2StarterProjectsItemVariant1Zip) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default
-    for DevfileSchemaVersion221ParentVariant2StarterProjectsItemVariant1Zip
-{
-    fn default() -> Self {
-        Self {
-            location: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ParentVariant2StarterProjectsItemVariant1Zip {
@@ -28010,6 +27471,7 @@ impl DevfileSchemaVersion221ProjectsItemVariant0Git {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ProjectsItemVariant0GitCheckoutFrom {
     #[doc = "The remote name should be used as init. Required if there are more than one remote configured"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -28023,14 +27485,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ProjectsItemVariant0GitCheckou
 {
     fn from(value: &DevfileSchemaVersion221ProjectsItemVariant0GitCheckoutFrom) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ProjectsItemVariant0GitCheckoutFrom {
-    fn default() -> Self {
-        Self {
-            remote: Default::default(),
-            revision: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ProjectsItemVariant0GitCheckoutFrom {
@@ -28238,6 +27692,7 @@ impl<'de> ::serde::Deserialize<'de> for DevfileSchemaVersion221ProjectsItemVaria
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221ProjectsItemVariant1Zip {
     #[doc = "Zip project's source location address. Should be file path of the archive, e.g. file://$FILE_PATH"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -28248,13 +27703,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221ProjectsItemVariant1Zip>
 {
     fn from(value: &DevfileSchemaVersion221ProjectsItemVariant1Zip) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221ProjectsItemVariant1Zip {
-    fn default() -> Self {
-        Self {
-            location: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221ProjectsItemVariant1Zip {
@@ -28559,6 +28007,7 @@ impl DevfileSchemaVersion221StarterProjectsItemVariant0Git {
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221StarterProjectsItemVariant0GitCheckoutFrom {
     #[doc = "The remote name should be used as init. Required if there are more than one remote configured"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -28572,14 +28021,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221StarterProjectsItemVariant0Git
 {
     fn from(value: &DevfileSchemaVersion221StarterProjectsItemVariant0GitCheckoutFrom) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221StarterProjectsItemVariant0GitCheckoutFrom {
-    fn default() -> Self {
-        Self {
-            remote: Default::default(),
-            revision: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221StarterProjectsItemVariant0GitCheckoutFrom {
@@ -28787,6 +28228,7 @@ impl<'de> ::serde::Deserialize<'de> for DevfileSchemaVersion221StarterProjectsIt
 #[doc = r" </details>"]
 #[derive(:: serde :: Deserialize, :: serde :: Serialize, Clone, Debug)]
 #[serde(deny_unknown_fields)]
+#[derive(Default)]
 pub struct DevfileSchemaVersion221StarterProjectsItemVariant1Zip {
     #[doc = "Zip project's source location address. Should be file path of the archive, e.g. file://$FILE_PATH"]
     #[serde(default, skip_serializing_if = "::std::option::Option::is_none")]
@@ -28797,13 +28239,6 @@ impl ::std::convert::From<&DevfileSchemaVersion221StarterProjectsItemVariant1Zip
 {
     fn from(value: &DevfileSchemaVersion221StarterProjectsItemVariant1Zip) -> Self {
         value.clone()
-    }
-}
-impl ::std::default::Default for DevfileSchemaVersion221StarterProjectsItemVariant1Zip {
-    fn default() -> Self {
-        Self {
-            location: Default::default(),
-        }
     }
 }
 impl DevfileSchemaVersion221StarterProjectsItemVariant1Zip {

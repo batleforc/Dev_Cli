@@ -2,7 +2,6 @@
 #![allow(clippy::needless_lifetimes)]
 #![allow(clippy::match_single_binding)]
 #![allow(clippy::clone_on_copy)]
-#![allow(clippy::derivable_impls)]
 
 #[doc = r" Error types."]
 pub mod error {
