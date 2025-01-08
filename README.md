@@ -16,6 +16,8 @@ Inside of this module there will be multiple categories of commands that will be
 - `dev_cli workspace` - Commands that are related to workspace manipulation (Info/Get/List/Start/Stop/...)
 - `dev_cli shell` - Commands that are related to shell manipulation (ItShell/ExecShell/...)
 - `dev_cli completion` - Commands that are related to completion manipulation (Bash/Zsh/...)
+- `dev_cli devfile` - Commands that are related to devfile manipulation (Create/Update/...)
+- `dev_cli dockerfile` - Commands that are related to dockerfile generation (Based on template/...)
 
 #### Code - Working
 

@@ -10,9 +10,11 @@ Well has we are in the process in setting up (rewriting) the restart from [local
 
 - <https://github.com/che-incubator/che-code/blob/main/code/extensions/che-remote/src/extension.ts#L75> The code is where the command is setup in che-code.
 - <https://github.com/che-incubator/che-code/blob/main/code/extensions/che-api/src/impl/k8s-devfile-service-impl.ts#L73> This is the place where the devfile is updated
-- <https://github.com/eclipse-che/che-devfile-registry/blob/main/tools/devworkspace-generator/src/main.ts#L32> this code handle the generation of the first step of generating your new devfile
-- <https://github.com/eclipse-che/che-devfile-registry/blob/main/tools/devworkspace-generator/src/generate.ts#L37> And here another midlle step that will call the context generator the contente will be generated line 65
-- <https://github.com/eclipse-che/che-devfile-registry/blob/main/tools/devworkspace-generator/src/devfile-schema/devfile-schema-validator.ts> This module handle the DevFile Validator (split into devfile version thing that i will need to do)
+- <https://github.com/devfile/devworkspace-generator/blob/main/src/main.ts#L32> this code handle the generation of the first step of generating your new devfile
+- <https://github.com/devfile/devworkspace-generator/blob/main/src/generate.ts#L37> And here another midlle step that will call the context generator the contente will be generated line 65
+- <https://github.com/devfile/devworkspace-generator/blob/main/src/devfile-schema/devfile-schema-validator.ts> This module handle the DevFile Validator (split into devfile version thing that i will need to do)
+
+This part should be done in JS and based on the library made by the che team. BUT i want to do a full rust version of it. So the lib will be translated in rust.
 
 ### What we need
 

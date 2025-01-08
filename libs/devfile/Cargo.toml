@@ -18,6 +18,7 @@ serde_json = "1.0"
 serde_yaml = "0.9"
 json-patch = "3.0.1"
 regress = "0.10.1"
+typify = "0.3.0"
 
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
