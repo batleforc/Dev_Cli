@@ -26,8 +26,9 @@ This part should be done in JS and based on the library made by the che team. BU
   - [ ] [Patch](https://docs.rs/kube/latest/kube/api/enum.Patch.html)
   - [ ] [Stop WS](https://github.com/che-incubator/che-code/blob/6e0a908d58cacb380c216dde3af544d75e3913d5/code/extensions/che-api/src/impl/k8s-workspace-service-impl.ts#L62)
 
-
 ### Useful V2
 
 - [Git Resolver](https://github.com/devfile/devworkspace-generator/tree/main/src/resolve)
-- 
+- [DevWorkspace and template generator](https://github.com/devfile/devworkspace-generator/blob/main/src/generate.ts#L66)
+- [Component finder](https://github.com/devfile/devworkspace-generator/blob/main/src/devfile/dev-container-component-finder.ts#L20)
+- [DevComponent inserter](https://github.com/devfile/devworkspace-generator/blob/main/src/devfile/dev-container-component-inserter.ts)
