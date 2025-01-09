@@ -7,3 +7,4 @@
 ## CRD to watch and generate
 
 - [devworkspaces.workspace.devfile.io](https://github.com/devfile/api/blob/main/schemas/latest/dev-workspace.json) => dev_work_space.rs `kopium devworkspaces.workspace.devfile.io -A -D PartialEq > dev_work_space.rs`
+- [devworkspacetemplates.workspace.devfile.io](https://github.com/devfile/api/blob/main/schemas/latest/dev-workspace-template-spec.json) dev_work_space_template.rs `kopium devworkspacetemplates.workspace.devfile.io -A -D PartialEq > dev_work_space_template.rs`
