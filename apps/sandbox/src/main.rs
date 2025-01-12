@@ -18,6 +18,7 @@ async fn main() {
     );
     //let namespace = "dev-ws-max-k2l7cd".to_string();
     //let ws_name = "weebodevimage".to_string();
+    // test sonar
     let extensions = extensions::Extensions::new();
     let installed_extensions = extensions.get_installed_extensions();
     println!("{:?}", installed_extensions);
