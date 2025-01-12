@@ -21,7 +21,7 @@ on:
     - cron: "50 23 * * *"
 
 jobs:
-  rust-clippy-analyze:
+  rust-sonar-analyze:
     name: Run rust-clippy analyzing
     runs-on: ubuntu-latest
     permissions:
