@@ -515,7 +515,7 @@ version = "0.1.1"
 dependencies = [
  "crd",
  "helper",
- "json-patch 3.0.1",
+ "json-patch",
  "jsonschema",
  "k8s-openapi",
  "kube",
@@ -1255,17 +1255,6 @@ dependencies = [
 
 [[package]]
 name = "json-patch"
-version = "1.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ec9ad60d674508f3ca8f380a928cfe7b096bc729c4e2dbfe3852bc45da3ab30b"
-dependencies = [
- "serde",
- "serde_json",
- "thiserror 1.0.69",
-]
-
-[[package]]
-name = "json-patch"
 version = "3.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "863726d7afb6bc2590eeff7135d923545e5e964f004c2ccf8716c25e70a86f08"
@@ -1399,7 +1388,7 @@ dependencies = [
  "chrono",
  "form_urlencoded",
  "http 1.2.0",
- "json-patch 3.0.1",
+ "json-patch",
  "k8s-openapi",
  "schemars",
  "serde",
@@ -3115,7 +3104,7 @@ dependencies = [
  "http-body-util",
  "hyper 1.5.2",
  "hyper-util",
- "json-patch 1.4.0",
+ "json-patch",
  "k8s-openapi",
  "kube",
  "serde",

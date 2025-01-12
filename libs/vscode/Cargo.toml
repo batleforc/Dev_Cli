@@ -16,6 +16,6 @@ k8s-openapi = { workspace = true }
 hyper = { version = "1.4", features = ["client", "http1"] }
 serde = "1.0.210"
 url = "2.5.2"
-json-patch = "1.2.0"
+json-patch = "3.0.1"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

@@ -1,0 +1,27 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: DevCli
+  description: Development CLI mainly aimed at interacting with Eclipse Che/Devpsaces
+  tags:
+  - eclipse-che
+  - devspaces
+  - cli
+  - rust
+  links:
+  - url: https://github.com/batleforc/Dev_Cli
+    title: Repo
+    icon: github
+  - url: https://che.weebo.fr#https://github.com/batleforc/Dev_Cli
+    title: Eclipse Che (VS Code)
+    icon: web
+  annotations:
+    backstage.io/managed-by-location: url:https://github.com/batleforc/Dev_Cli/blob/main/catalog-info.yaml
+    backstage.io/source-location: url:https://github.com/batleforc/Dev_Cli/blob/main/
+    github.com/project-slug: batleforc/Monofolio
+    endoflife.date/products: rust@1.84
+spec:
+  type: service
+  lifecycle: production
+  owner: WeeboDev
+  system: infra
