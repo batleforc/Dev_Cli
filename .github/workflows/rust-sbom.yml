@@ -47,3 +47,12 @@ jobs:
         with:
           name: sonar-report
           path: apps/dev_cli/dev_cli.cdx.json
+      - name: Push to DepTrack
+        uses: DependencyTrack/gh-upload-sbom@v3
+        with:
+          serverhostname: ${{ secrets.DEPENDENCYTRACK_SERVERHOSTNAME }}
+          apikey: ${{ secrets.DEPENDENCYTRACK_APIKEY }}
+          projectname: "DevCli"
+          projectversion: "main"
+          bomfilename: "apps/dev_cli/dev_cli.cdx.json"
+          project: aea9514f-95b7-45df-baec-2a761c6139c3

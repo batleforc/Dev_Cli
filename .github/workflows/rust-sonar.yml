@@ -54,3 +54,8 @@ jobs:
         with:
           name: sonar-report
           path: sonar-issues.json
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v4
+        env:
+          SONAR_TOKEN: ${{ secrets.SONARQUBE_KEY }}
+          SONAR_HOST_URL: ${{ secrets.SONARQUBE_HOST }}
