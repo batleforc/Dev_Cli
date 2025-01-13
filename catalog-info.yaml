@@ -20,6 +20,7 @@ metadata:
     backstage.io/source-location: url:https://github.com/batleforc/Dev_Cli/blob/main/
     github.com/project-slug: batleforc/Monofolio
     endoflife.date/products: rust@1.84
+    sonarqube.org/project-key: dev_cli
 spec:
   type: service
   lifecycle: production
