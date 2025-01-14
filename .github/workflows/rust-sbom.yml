@@ -11,7 +11,7 @@ name: rust-sbom gen
 
 on:
   push:
-    branches: ["main", "*"]
+    branches: ["main"]
     paths:
       - "**/Cargo.toml"
       - "**/Cargo.lock"
@@ -52,7 +52,5 @@ jobs:
         with:
           serverhostname: ${{ secrets.DEPENDENCYTRACK_SERVERHOSTNAME }}
           apikey: ${{ secrets.DEPENDENCYTRACK_APIKEY }}
-          projectname: "DevCli"
-          projectversion: "main"
           bomfilename: "apps/dev_cli/dev_cli.cdx.json"
           project: aea9514f-95b7-45df-baec-2a761c6139c3

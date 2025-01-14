@@ -11,9 +11,11 @@ name: rust-sonarqube analyze
 
 on:
   push:
-    branches: ["main", "*"]
+    branches: ["main"]
     paths:
       - "**/**/*.rs"
+      - "**/Cargo.toml"
+      - "**/Cargo.lock"
   pull_request:
     # The branches below must be a subset of the branches above
     branches: ["main"]
