@@ -1,9 +1,11 @@
 #![cfg_attr(coverage_nightly, feature(coverage_attribute))]
 use super::tracing_kind::{Tracing, TracingKind};
 use opentelemetry::trace::TracerProvider;
+use opentelemetry::KeyValue;
 use opentelemetry_otlp::{WithExportConfig, WithTonicConfig};
 use opentelemetry_sdk::runtime;
 use opentelemetry_sdk::trace;
+use opentelemetry_sdk::Resource;
 use std::env;
 use std::str::FromStr;
 use std::{fs::File, sync::Arc, vec};
@@ -82,6 +84,10 @@ pub fn init_tracing(tracing_config: Vec<Tracing>, name: String) {
 
                 let trace_provider = trace::TracerProvider::builder()
                     .with_batch_exporter(exporter, runtime::Tokio)
+                    .with_resource(Resource::new_with_defaults(vec![
+                        KeyValue::new("service.name", name.clone()),
+                        KeyValue::new("service.pod", pod_name.clone()),
+                    ]))
                     .build();
 
                 let env_filter = EnvFilter::builder()
