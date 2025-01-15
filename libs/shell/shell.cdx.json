@@ -2,9 +2,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.3",
   "version": 1,
-  "serialNumber": "urn:uuid:7bb4c95f-c534-49a0-8727-663525659f55",
+  "serialNumber": "urn:uuid:1b0e09ce-c816-4fb2-962f-c8f3037311bd",
   "metadata": {
-    "timestamp": "2025-01-15T20:14:20.965635771Z",
+    "timestamp": "2025-01-15T22:21:26.674244782Z",
     "tools": [
       {
         "vendor": "CycloneDX",
@@ -14,18 +14,18 @@
     ],
     "component": {
       "type": "library",
-      "bom-ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/shell#2.0.0",
+      "bom-ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/shell#2.2.0",
       "name": "shell",
-      "version": "2.0.0",
+      "version": "2.2.0",
       "scope": "required",
-      "purl": "pkg:cargo/shell@2.0.0?download_url=file://.",
+      "purl": "pkg:cargo/shell@2.2.0?download_url=file://.",
       "components": [
         {
           "type": "library",
-          "bom-ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/shell#2.0.0 bin-target-0",
+          "bom-ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/shell#2.2.0 bin-target-0",
           "name": "shell",
-          "version": "2.0.0",
-          "purl": "pkg:cargo/shell@2.0.0?download_url=file://.#src/lib.rs"
+          "version": "2.2.0",
+          "purl": "pkg:cargo/shell@2.2.0?download_url=file://.#src/lib.rs"
         }
       ]
     },
@@ -39,19 +39,19 @@
   "components": [
     {
       "type": "library",
-      "bom-ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/crd#0.1.1",
+      "bom-ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/crd#2.2.0",
       "name": "crd",
-      "version": "0.1.1",
+      "version": "2.2.0",
       "scope": "required",
-      "purl": "pkg:cargo/crd@0.1.1?download_url=file://../crd"
+      "purl": "pkg:cargo/crd@2.2.0?download_url=file://../crd"
     },
     {
       "type": "library",
-      "bom-ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/helper#0.1.1",
+      "bom-ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/helper#2.2.0",
       "name": "helper",
-      "version": "0.1.1",
+      "version": "2.2.0",
       "scope": "required",
-      "purl": "pkg:cargo/helper@0.1.1?download_url=file://../helper"
+      "purl": "pkg:cargo/helper@2.2.0?download_url=file://../helper"
     },
     {
       "type": "library",
@@ -4975,7 +4975,7 @@
   ],
   "dependencies": [
     {
-      "ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/crd#0.1.1",
+      "ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/crd#2.2.0",
       "dependsOn": [
         "registry+https://github.com/rust-lang/crates.io-index#k8s-openapi@0.24.0",
         "registry+https://github.com/rust-lang/crates.io-index#kube@0.98.0",
@@ -4985,9 +4985,9 @@
       ]
     },
     {
-      "ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/helper#0.1.1",
+      "ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/helper#2.2.0",
       "dependsOn": [
-        "path+file:///media/maxime/DATA/git/dev-cli/libs/crd#0.1.1",
+        "path+file:///media/maxime/DATA/git/dev-cli/libs/crd#2.2.0",
         "registry+https://github.com/rust-lang/crates.io-index#k8s-openapi@0.24.0",
         "registry+https://github.com/rust-lang/crates.io-index#kube@0.98.0",
         "registry+https://github.com/rust-lang/crates.io-index#serde@1.0.217",
@@ -4996,12 +4996,12 @@
       ]
     },
     {
-      "ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/shell#2.0.0",
+      "ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/shell#2.2.0",
       "dependsOn": [
         "registry+https://github.com/rust-lang/crates.io-index#anyhow@1.0.95",
         "registry+https://github.com/rust-lang/crates.io-index#crossterm@0.28.1",
         "registry+https://github.com/rust-lang/crates.io-index#futures@0.3.31",
-        "path+file:///media/maxime/DATA/git/dev-cli/libs/helper#0.1.1",
+        "path+file:///media/maxime/DATA/git/dev-cli/libs/helper#2.2.0",
         "registry+https://github.com/rust-lang/crates.io-index#k8s-openapi@0.24.0",
         "registry+https://github.com/rust-lang/crates.io-index#kube@0.98.0",
         "registry+https://github.com/rust-lang/crates.io-index#tokio@1.43.0",

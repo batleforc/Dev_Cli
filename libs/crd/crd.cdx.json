@@ -2,9 +2,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.3",
   "version": 1,
-  "serialNumber": "urn:uuid:763d4317-2469-43cf-ac7b-f8e302587ad1",
+  "serialNumber": "urn:uuid:340227bf-9954-4fab-bd7d-a55be8fd80e7",
   "metadata": {
-    "timestamp": "2025-01-15T20:14:20.929364012Z",
+    "timestamp": "2025-01-15T22:21:26.640426168Z",
     "tools": [
       {
         "vendor": "CycloneDX",
@@ -14,18 +14,18 @@
     ],
     "component": {
       "type": "library",
-      "bom-ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/crd#0.1.1",
+      "bom-ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/crd#2.2.0",
       "name": "crd",
-      "version": "0.1.1",
+      "version": "2.2.0",
       "scope": "required",
-      "purl": "pkg:cargo/crd@0.1.1?download_url=file://.",
+      "purl": "pkg:cargo/crd@2.2.0?download_url=file://.",
       "components": [
         {
           "type": "library",
-          "bom-ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/crd#0.1.1 bin-target-0",
+          "bom-ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/crd#2.2.0 bin-target-0",
           "name": "crd",
-          "version": "0.1.1",
-          "purl": "pkg:cargo/crd@0.1.1?download_url=file://.#src/lib.rs"
+          "version": "2.2.0",
+          "purl": "pkg:cargo/crd@2.2.0?download_url=file://.#src/lib.rs"
         }
       ]
     },
@@ -4630,7 +4630,7 @@
   ],
   "dependencies": [
     {
-      "ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/crd#0.1.1",
+      "ref": "path+file:///media/maxime/DATA/git/dev-cli/libs/crd#2.2.0",
       "dependsOn": [
         "registry+https://github.com/rust-lang/crates.io-index#k8s-openapi@0.24.0",
         "registry+https://github.com/rust-lang/crates.io-index#kube@0.98.0",

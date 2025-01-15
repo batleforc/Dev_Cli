@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [2.2.1](https://github.com/batleforc/Dev_Cli/compare/bd289acf085704898882ac5204bbfa32a582e3a8..2.2.1) - 2025-01-15
+#### Bug Fixes
+- service name doesnt come up - ([bd289ac](https://github.com/batleforc/Dev_Cli/commit/bd289acf085704898882ac5204bbfa32a582e3a8)) - Max batleforc
+
+- - -
+
 ## [2.2.0](https://github.com/batleforc/Dev_Cli/compare/f9bb0accabb4609864b64844dad32234e40f8b92..2.2.0) - 2025-01-15
 #### Bug Fixes
 - job name - ([fd68da8](https://github.com/batleforc/Dev_Cli/commit/fd68da83630196fa36714294614aaf496a5a4535)) - Max batleforc
