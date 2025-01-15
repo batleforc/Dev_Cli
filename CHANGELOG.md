@@ -2,6 +2,28 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [2.2.0](https://github.com/batleforc/Dev_Cli/compare/f9bb0accabb4609864b64844dad32234e40f8b92..2.2.0) - 2025-01-15
+#### Bug Fixes
+- job name - ([fd68da8](https://github.com/batleforc/Dev_Cli/commit/fd68da83630196fa36714294614aaf496a5a4535)) - Max batleforc
+#### Features
+- huge upgrade of the tool tracing module in order to jump from the - ([ff3d2be](https://github.com/batleforc/Dev_Cli/commit/ff3d2be0519987aea21db6e6db4740b133d659af)) - Max batleforc
+- upgrade ci/cd - ([4dfeeec](https://github.com/batleforc/Dev_Cli/commit/4dfeeec7bdaf4ee7037c73ec03d821b4cb4c961d)) - Max batleforc
+- add project key - ([5798119](https://github.com/batleforc/Dev_Cli/commit/57981193630a6027f4b9fb3ac57387ffa43b9d23)) - Max batleforc
+- update - ([3f4fbbe](https://github.com/batleforc/Dev_Cli/commit/3f4fbbe6b4413bace4998313c2247d3573186bff)) - Max batleforc
+- workkk - ([6bb4b14](https://github.com/batleforc/Dev_Cli/commit/6bb4b140b5e4d17b53254baefbdc0970e8cc2452)) - Max batleforc
+- fix ? - ([7e556dd](https://github.com/batleforc/Dev_Cli/commit/7e556ddd55ae9689689911dbb076c2ea7f2ae970)) - Max batleforc
+- try - ([2f40fe2](https://github.com/batleforc/Dev_Cli/commit/2f40fe2cc6abfeb9e7b04d24cffd3390a6892eac)) - Max batleforc
+- add step to push build - ([fb432ef](https://github.com/batleforc/Dev_Cli/commit/fb432ef1e47619f7eb0333bb2ac8f39a2c700d32)) - Max batleforc
+- add two new job, one provide Sonar scan and the other one provide - ([dfa92e0](https://github.com/batleforc/Dev_Cli/commit/dfa92e04c44e37d9d5260cd4591fbe38580f2790)) - Max batleforc
+- upgrade json patch and add catalog info about this project - ([5bb2044](https://github.com/batleforc/Dev_Cli/commit/5bb20447e73abb6ce1700930b517c5d7ccdfe83c)) - Max batleforc
+- WIP rewriting the restart from devfile logique - ([d2ce6ff](https://github.com/batleforc/Dev_Cli/commit/d2ce6ff96350837250bff98a5442e51a7c609bfd)) - Max batleforc
+- Add DevWorkSpaceTemplate CRD in order to handle the Editor - ([9484314](https://github.com/batleforc/Dev_Cli/commit/948431467a797ccf0707597ad290b2294287bc26)) - Max batleforc
+- Remove devfile to struct usage and use the decorator, add more doc - ([605a21e](https://github.com/batleforc/Dev_Cli/commit/605a21ed06e8bf206e4b617a6442e27df5a2aaa9)) - Max batleforc
+- apply format - ([502e816](https://github.com/batleforc/Dev_Cli/commit/502e816335a2eed2baa18d5b9efdbf934316f88b)) - Max batleforc
+- WIP create devfile format - ([f9bb0ac](https://github.com/batleforc/Dev_Cli/commit/f9bb0accabb4609864b64844dad32234e40f8b92)) - Max batleforc
+
+- - -
+
 ## [2.1.0](https://github.com/batleforc/Dev_Cli/compare/f5d69056ec47e595f1067003b7bdff1d3fbd8e81..2.1.0) - 2025-01-05
 #### Features
 - WIP on commit version - ([f5d6905](https://github.com/batleforc/Dev_Cli/commit/f5d69056ec47e595f1067003b7bdff1d3fbd8e81)) - Max batleforc
