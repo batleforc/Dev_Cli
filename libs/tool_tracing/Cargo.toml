@@ -14,12 +14,13 @@ tracing-subscriber = { version = "0.3", features = [
 ] }
 time = "0.3"
 tracing-bunyan-formatter = "0.3"
-opentelemetry = "0.23"
-opentelemetry_sdk = { version = "0.23", features = ["rt-tokio"] }
-opentelemetry-otlp = { version = "0.16" }
-tracing-opentelemetry = "0.24"
+opentelemetry = "0.27"
+opentelemetry_sdk = { version = "0.27", features = ["rt-tokio"] }
+opentelemetry-otlp = { version = "0.27", features = ["grpc-tonic"] }
+tracing-opentelemetry = "0.28"
 serde_json = "1.0"
 tokio = { workspace = true }
+tonic = { version = "*" }
 
 [lints.rust]
 unexpected_cfgs = { level = "warn", check-cfg = [

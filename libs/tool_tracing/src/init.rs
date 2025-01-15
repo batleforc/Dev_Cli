@@ -1,16 +1,17 @@
 #![cfg_attr(coverage_nightly, feature(coverage_attribute))]
 use super::tracing_kind::{Tracing, TracingKind};
-use opentelemetry::KeyValue;
-use opentelemetry_otlp::WithExportConfig;
-use opentelemetry_sdk::trace::Config;
-use opentelemetry_sdk::{runtime, Resource};
+use opentelemetry::trace::TracerProvider;
+use opentelemetry_otlp::{WithExportConfig, WithTonicConfig};
+use opentelemetry_sdk::runtime;
+use opentelemetry_sdk::trace;
 use std::env;
+use std::str::FromStr;
 use std::{fs::File, sync::Arc, vec};
 use time::format_description;
+use tonic::metadata::{MetadataMap, MetadataValue};
 use tracing::level_filters::LevelFilter;
 use tracing::subscriber;
 use tracing_bunyan_formatter::{BunyanFormattingLayer, JsonStorageLayer};
-use tracing_opentelemetry::OpenTelemetryLayer;
 use tracing_subscriber::fmt::time::UtcTime;
 use tracing_subscriber::prelude::__tracing_subscriber_SubscriberExt;
 use tracing_subscriber::{fmt, EnvFilter, Layer, Registry};
@@ -66,25 +67,32 @@ pub fn init_tracing(tracing_config: Vec<Tracing>, name: String) {
                     endpoint_from_env.clone(),
                     config.name.to_uppercase()
                 );
-                let telemetry = opentelemetry_otlp::new_pipeline()
-                    .tracing()
-                    .with_exporter(
-                        opentelemetry_otlp::new_exporter()
-                            .tonic()
-                            .with_endpoint(endpoint_from_env),
-                    )
-                    .with_trace_config(Config::default().with_resource(Resource::new(vec![
-                        KeyValue::new("service.name", name.clone()),
-                        KeyValue::new("service.pod", pod_name.clone()),
-                    ])))
-                    .install_batch(runtime::Tokio)
-                    .expect("Failed to install opentelemetry");
+
+                let mut metadata = MetadataMap::new();
+
+                metadata.insert("service.name", MetadataValue::from_str(&name).unwrap());
+                metadata.insert("service.pod", MetadataValue::from_str(&pod_name).unwrap());
+
+                let exporter = opentelemetry_otlp::SpanExporter::builder()
+                    .with_tonic()
+                    .with_endpoint(endpoint_from_env)
+                    .with_metadata(metadata)
+                    .build()
+                    .expect("Failed to build exporter");
+
+                let trace_provider = trace::TracerProvider::builder()
+                    .with_batch_exporter(exporter, runtime::Tokio)
+                    .build();
+
                 let env_filter = EnvFilter::builder()
                     .with_default_directive(LevelFilter::from(config.level).into())
                     .from_env()
                     .unwrap();
-                let tele_layer = OpenTelemetryLayer::new(telemetry).with_filter(env_filter);
-                layers.push(tele_layer.boxed());
+
+                let telemetry = tracing_opentelemetry::layer()
+                    .with_tracer(trace_provider.tracer("tracing"))
+                    .with_filter(env_filter);
+                layers.push(telemetry.boxed());
             }
         }
     }
